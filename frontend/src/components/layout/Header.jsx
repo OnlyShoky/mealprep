@@ -43,8 +43,11 @@ export default function Header() {
         <nav className="flex space-x-2 items-center">
           <div className="flex w-fit shadow-box-up rounded-xl dark:bg-box-dark dark:shadow-box-dark-out">
             <div className="dark:shadow-buttons-box-dark rounded-2xl w-full">
-              <button title="Go to post list page" className="text-gray-500 font-semibold hover:text-black border-2 inline-flex items-center last-of-type:mr-0 p-2.5 border-transparent bg-light-secondary shadow-button-flat-nopressed hover:shadow-button-flat-pressed focus:opacity-100 focus:outline-none active:shadow-button-flat-pressed font-medium rounded-full text-sm text-center">
-                <Link to="/preepweek"> Preepweek </Link>
+              <button title="Go to PrepWeek planner" className="text-gray-500 font-semibold hover:text-black border-2 inline-flex items-center last-of-type:mr-0 p-2.5 border-transparent bg-light-secondary shadow-button-flat-nopressed hover:shadow-button-flat-pressed focus:opacity-100 focus:outline-none active:shadow-button-flat-pressed font-medium rounded-full text-sm text-center">
+                <Link to="/prepweek"> PrepWeek </Link>
+              </button>
+              <button title="Go to Profile" className="text-gray-500 font-semibold hover:text-black border-2 inline-flex items-center last-of-type:mr-0 p-2.5 border-transparent bg-light-secondary shadow-button-flat-nopressed hover:shadow-button-flat-pressed focus:opacity-100 focus:outline-none active:shadow-button-flat-pressed font-medium rounded-full text-sm text-center">
+                <Link to="/profile"> Profile </Link>
               </button>
               <button title="Go to post list page" className="text-gray-500 font-semibold hover:text-black border-2 inline-flex items-center last-of-type:mr-0 p-2.5 border-transparent bg-light-secondary shadow-button-flat-nopressed hover:shadow-button-flat-pressed focus:opacity-100 focus:outline-none active:shadow-button-flat-pressed font-medium rounded-full text-sm text-center">
                 <Link to="/recipes"> Recipes </Link>

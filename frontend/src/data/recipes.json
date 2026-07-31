@@ -1,10 +1,897 @@
 [
   {
-    "id": "1",
+    "id": "b1",
+    "category": "breakfast",
+    "dietary": [],
+    "title": "Scrambled Eggs with Smoked Salmon",
+    "description": "Silky, creamy scrambled eggs paired with smoked salmon and fresh chives. High in protein, ready in under 10 minutes — the ultimate high-performance breakfast.",
+    "image": "/images/recipe-b1.jpg",
+    "image_card": "/images/recipe-b1.jpg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:08:00",
+    "cool_time": null,
+    "total_time": "00:13:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 94,
+    "tags": [
+      "High-Protein",
+      "Quick",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Crack eggs into a bowl, add milk, salt and pepper. Whisk until combined.\n2. Heat butter in a non-stick pan over low-medium heat.\n3. Pour in egg mixture. Using a silicone spatula, gently push eggs from the edges toward the centre in slow folds.\n4. Remove from heat while eggs still look slightly underdone — residual heat finishes them.\n5. Plate and top with smoked salmon and fresh chives.",
+    "equipment": "Non-stick pan\nSilicone spatula\nBowl\nWhisk",
+    "notes": "The key to creamy scrambled eggs is low heat and patience. Never stop stirring or you'll get rubbery curds.",
+    "ingredients": [
+      {
+        "ingredient": "Eggs",
+        "quantity": 3,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Whole milk",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Smoked salmon",
+        "quantity": 50,
+        "unit": "g",
+        "notes": "sliced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Unsalted butter",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh chives",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "chopped",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 350,
+      "protein": 31,
+      "carbs": 2,
+      "fat": 24
+    },
+    "macro_tags": {
+      "protein_source": "Eggs",
+      "carb_source": "Whole milk"
+    },
+    "created": "2025-01-10T08:00:00Z",
+    "activate_date": "2025-01-10"
+  },
+  {
+    "id": "b2",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Greek Yogurt Parfait with Oats & Berries",
+    "description": "Creamy Greek yogurt layered with rolled oats, fresh mixed berries, and a drizzle of honey. Protein-rich, no cooking required, and ready in 5 minutes.",
+    "image": "/images/recipe-b2.jpg",
+    "image_card": "/images/recipe-b2.jpg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 212,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "Quick",
+      "No-Cook",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "Mediterranean"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Spoon Greek yogurt into a glass or bowl.\n2. Top with rolled oats, mixed berries, and honey.\n3. Serve immediately, or refrigerate overnight for a softer oat texture.",
+    "equipment": "Bowl or glass",
+    "notes": "Use full-fat Greek yogurt for the best texture and satiety. Berries can be fresh or frozen (thawed).",
+    "ingredients": [
+      {
+        "ingredient": "Plain Greek yogurt",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "full-fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Rolled oats",
+        "quantity": 40,
+        "unit": "g",
+        "notes": "old-fashioned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Mixed berries",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "fresh or frozen",
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 340,
+      "protein": 22,
+      "carbs": 48,
+      "fat": 6
+    },
+    "macro_tags": {
+      "protein_source": "Plain Greek yogurt",
+      "carb_source": "Rolled oats"
+    },
+    "created": "2025-01-12T08:00:00Z",
+    "activate_date": "2025-01-12"
+  },
+  {
+    "id": "b3",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Avocado Toast with Poached Egg",
+    "description": "Crushed avocado on toasted wholegrain bread, topped with a perfectly poached egg and chilli flakes. A modern classic that delivers healthy fats and protein in one slice.",
+    "image": "/images/recipe-b3.jpeg",
+    "image_card": "/images/recipe-b3.jpeg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:10:00",
+    "cool_time": null,
+    "total_time": "00:15:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.9,
+    "number_of_ratings": 341,
+    "tags": [
+      "Vegetarian",
+      "Healthy",
+      "Breakfast",
+      "High-Protein"
+    ],
+    "cuisines": [
+      "Australian"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Toast the bread until golden and crisp.\n2. Bring a small pot of water to a gentle simmer. Add a splash of vinegar. Crack egg into a small cup, then lower into the simmering water. Cook 3 minutes for a runny yolk. Remove with a slotted spoon.\n3. Halve the avocado, remove stone, and scoop flesh into a bowl. Add lemon juice, salt and pepper. Crush with a fork, leaving some texture.\n4. Spread crushed avocado on toast. Top with poached egg, chilli flakes, and extra salt.",
+    "equipment": "Small saucepan\nSlotted spoon\nToaster\nFork",
+    "notes": "A splash of white vinegar in the poaching water helps the egg white hold together. Fresh eggs poach best.",
+    "ingredients": [
+      {
+        "ingredient": "Wholegrain bread",
+        "quantity": 2,
+        "unit": "slices",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ripe avocado",
+        "quantity": 100,
+        "unit": "g",
+        "notes": "about half a large avocado",
+        "groupName": null
+      },
+      {
+        "ingredient": "Egg",
+        "quantity": 1,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Lemon juice",
+        "quantity": 5,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried chilli flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "White wine vinegar",
+        "quantity": 5,
+        "unit": "ml",
+        "notes": "for poaching",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein": 16,
+      "carbs": 32,
+      "fat": 20
+    },
+    "macro_tags": {
+      "protein_source": "Egg",
+      "carb_source": "Wholegrain bread"
+    },
+    "created": "2025-01-15T08:00:00Z",
+    "activate_date": "2025-01-15"
+  },
+  {
+    "id": "b4",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Overnight Oats",
+    "description": "Thick, creamy oats soaked overnight in milk with chia seeds and topped with banana slices. Zero morning effort — prep the night before and grab from the fridge.",
+    "image": "/images/recipe-b4.jpeg",
+    "image_card": "/images/recipe-b4.jpeg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": "08:00:00",
+    "total_time": "08:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 289,
+    "tags": [
+      "Vegetarian",
+      "Meal Prep",
+      "No-Cook",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. In a jar or container, combine oats, milk, chia seeds, and honey. Stir well.\n2. Seal and refrigerate overnight (at least 6 hours).\n3. In the morning, top with sliced banana and serve cold.",
+    "equipment": "Jar or lidded container",
+    "notes": "Add a tablespoon of peanut butter for extra protein and flavour. Keeps for up to 3 days in the fridge.",
+    "ingredients": [
+      {
+        "ingredient": "Rolled oats",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "old-fashioned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Whole milk",
+        "quantity": 180,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Chia seeds",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Banana",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "sliced, about half a banana",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 420,
+      "protein": 14,
+      "carbs": 72,
+      "fat": 10
+    },
+    "macro_tags": {
+      "protein_source": "Chia seeds",
+      "carb_source": "Rolled oats"
+    },
+    "created": "2025-01-18T08:00:00Z",
+    "activate_date": "2025-01-18"
+  },
+  {
+    "id": "b5",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Banana Protein Pancakes",
+    "description": "Fluffy three-ingredient pancakes made from banana, eggs, and oats — no flour, no sugar. High protein, naturally sweet, and genuinely delicious.",
+    "image": "/images/recipe-b5.jpeg",
+    "image_card": "/images/recipe-b5.jpeg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:10:00",
+    "cool_time": null,
+    "total_time": "00:15:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.6,
+    "number_of_ratings": 178,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "Quick",
+      "Breakfast",
+      "Healthy"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. In a bowl, mash banana until smooth.\n2. Add eggs and rolled oats. Mix until a thick batter forms.\n3. Heat a non-stick pan over medium heat with a little coconut oil.\n4. Pour about 3 tablespoons of batter per pancake. Cook 2–3 minutes until bubbles form on the surface, then flip and cook 1 minute.\n5. Serve with a drizzle of honey or fresh berries.",
+    "equipment": "Non-stick pan\nBowl\nFork\nSpatula",
+    "notes": "Let the batter rest 2 minutes before cooking so the oats absorb moisture. Add a scoop of protein powder for extra protein.",
+    "ingredients": [
+      {
+        "ingredient": "Ripe banana",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "about 1 large banana",
+        "groupName": null
+      },
+      {
+        "ingredient": "Eggs",
+        "quantity": 2,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Rolled oats",
+        "quantity": 40,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Coconut oil",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "for cooking",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 360,
+      "protein": 17,
+      "carbs": 48,
+      "fat": 12
+    },
+    "macro_tags": {
+      "protein_source": "Eggs",
+      "carb_source": "Rolled oats"
+    },
+    "created": "2025-01-20T08:00:00Z",
+    "activate_date": "2025-01-20"
+  },
+  {
+    "id": "b6",
+    "category": "breakfast",
+    "dietary": [],
+    "title": "Egg & Vegetable Omelette",
+    "description": "A classic three-egg omelette filled with sautéed mushrooms, spinach, and cherry tomatoes. Wholesome, fast, and endlessly adaptable.",
+    "image": "/images/recipe-b6.jpeg",
+    "image_card": "/images/recipe-b6.jpeg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:10:00",
+    "cool_time": null,
+    "total_time": "00:15:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 163,
+    "tags": [
+      "High-Protein",
+      "Quick",
+      "Healthy",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "French"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Whisk eggs with salt and pepper in a bowl.\n2. Heat butter in a non-stick pan over medium-high heat. Add mushrooms, cook 3 minutes until golden. Add spinach and cherry tomatoes, cook 1 minute. Transfer filling to a plate.\n3. Reduce heat to medium. Add the remaining butter. Pour in egg mixture. Tilt the pan so eggs coat the surface.\n4. When edges set and top is still slightly glossy, add the filling to one half.\n5. Fold omelette in half and slide onto plate. Serve immediately.",
+    "equipment": "Non-stick pan\nBowl\nWhisk\nSpatula",
+    "notes": "Don't overcook — the inside should stay just set. Use any vegetables you have on hand.",
+    "ingredients": [
+      {
+        "ingredient": "Eggs",
+        "quantity": 3,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Button mushrooms",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "sliced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Baby spinach",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Unsalted butter",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 310,
+      "protein": 23,
+      "carbs": 5,
+      "fat": 22
+    },
+    "macro_tags": {
+      "protein_source": "Eggs",
+      "carb_source": "Cherry tomatoes"
+    },
+    "created": "2025-01-22T08:00:00Z",
+    "activate_date": "2025-01-22"
+  },
+  {
+    "id": "b7",
+    "category": "breakfast",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Smoothie Bowl",
+    "description": "A thick, creamy blended bowl of frozen banana and mixed berries, topped with granola, sliced banana, and chia seeds. Vibrant, nutritious, and incredibly filling.",
+    "image": "/images/recipe-b7.jpg",
+    "image_card": "/images/recipe-b7.jpg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 207,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Breakfast",
+      "Healthy"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Blend frozen banana and mixed berries with oat milk until thick and smooth. Add a splash more oat milk if needed — the consistency should be thicker than a drinkable smoothie.\n2. Pour into a bowl.\n3. Top with granola, sliced banana, and chia seeds. Serve immediately.",
+    "equipment": "High-speed blender",
+    "notes": "Use frozen fruit for a thick, creamy consistency. Do not add too much liquid or it becomes a drinkable smoothie.",
+    "ingredients": [
+      {
+        "ingredient": "Frozen banana",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "sliced before freezing",
+        "groupName": null
+      },
+      {
+        "ingredient": "Frozen mixed berries",
+        "quantity": 100,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Oat milk",
+        "quantity": 60,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Granola",
+        "quantity": 40,
+        "unit": "g",
+        "notes": "for topping",
+        "groupName": null
+      },
+      {
+        "ingredient": "Chia seeds",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "for topping",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 370,
+      "protein": 7,
+      "carbs": 75,
+      "fat": 7
+    },
+    "macro_tags": {
+      "protein_source": "Chia seeds",
+      "carb_source": "Frozen banana"
+    },
+    "created": "2025-01-25T08:00:00Z",
+    "activate_date": "2025-01-25"
+  },
+  {
+    "id": "b8",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Cottage Cheese Toast with Berries",
+    "description": "Thick-sliced sourdough topped with creamy cottage cheese and fresh berries. Simple, high-protein, and satisfying without any cooking.",
+    "image": "/images/recipe-b8.jpeg",
+    "image_card": "/images/recipe-b8.jpeg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.5,
+    "number_of_ratings": 112,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "Quick",
+      "No-Cook",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Toast the sourdough bread.\n2. Spread cottage cheese generously on each slice.\n3. Top with fresh berries and a drizzle of honey.",
+    "equipment": "Toaster",
+    "notes": "Full-fat cottage cheese has the best texture. Strawberries, blueberries, or raspberries all work equally well.",
+    "ingredients": [
+      {
+        "ingredient": "Sourdough bread",
+        "quantity": 2,
+        "unit": "slices",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cottage cheese",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "full-fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh berries",
+        "quantity": 80,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 340,
+      "protein": 22,
+      "carbs": 46,
+      "fat": 6
+    },
+    "macro_tags": {
+      "protein_source": "Cottage cheese",
+      "carb_source": "Sourdough bread"
+    },
+    "created": "2025-01-28T08:00:00Z",
+    "activate_date": "2025-01-28"
+  },
+  {
+    "id": "b9",
+    "category": "breakfast",
+    "dietary": [],
+    "title": "Turkey & Veggie Breakfast Wrap",
+    "description": "A warm flour tortilla filled with scrambled eggs, turkey slices, avocado, and salsa. Portable, high-protein, and genuinely filling — ideal for busy mornings.",
+    "image": "/images/recipe-b9.jpg",
+    "image_card": "/images/recipe-b9.jpg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:08:00",
+    "cool_time": null,
+    "total_time": "00:13:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 145,
+    "tags": [
+      "High-Protein",
+      "Quick",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Whisk eggs with salt and pepper. Scramble in a non-stick pan over low-medium heat.\n2. Warm the tortilla in a dry pan for 30 seconds per side.\n3. Lay turkey slices on the tortilla, add scrambled eggs, avocado slices, and salsa.\n4. Fold sides in and roll tightly. Serve immediately.",
+    "equipment": "Non-stick pan\nBowl\nWhisk",
+    "notes": "Make it ahead — wrap in foil and reheat in the oven at 180°C for 8 minutes.",
+    "ingredients": [
+      {
+        "ingredient": "Flour tortilla",
+        "quantity": 1,
+        "unit": "large",
+        "notes": "about 60g",
+        "groupName": null
+      },
+      {
+        "ingredient": "Eggs",
+        "quantity": 2,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Sliced turkey",
+        "quantity": 60,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ripe avocado",
+        "quantity": 50,
+        "unit": "g",
+        "notes": "sliced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Tomato salsa",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 420,
+      "protein": 30,
+      "carbs": 30,
+      "fat": 20
+    },
+    "macro_tags": {
+      "protein_source": "Sliced turkey",
+      "carb_source": "Flour tortilla"
+    },
+    "created": "2025-02-01T08:00:00Z",
+    "activate_date": "2025-02-01"
+  },
+  {
+    "id": "b10",
+    "category": "breakfast",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Ricotta Toast with Honey & Walnuts",
+    "description": "Creamy ricotta on toasted wholegrain bread, drizzled with honey and scattered with walnuts. An elegant, satisfying breakfast with healthy fats and protein.",
+    "image": "/images/recipe-b10.jpg",
+    "image_card": "/images/recipe-b10.jpg",
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.6,
+    "number_of_ratings": 88,
+    "tags": [
+      "Vegetarian",
+      "Quick",
+      "Breakfast"
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "courses": [
+      "Breakfast"
+    ],
+    "instructions": "1. Toast the bread until golden.\n2. Spread ricotta generously on each slice.\n3. Drizzle with honey and scatter crushed walnuts on top.",
+    "equipment": "Toaster",
+    "notes": "Use a good-quality ricotta for best flavour. The walnut-honey combination is classic and excellent.",
+    "ingredients": [
+      {
+        "ingredient": "Wholegrain bread",
+        "quantity": 2,
+        "unit": "slices",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ricotta",
+        "quantity": 100,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Walnuts",
+        "quantity": 20,
+        "unit": "g",
+        "notes": "roughly crushed",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein": 14,
+      "carbs": 38,
+      "fat": 20
+    },
+    "macro_tags": {
+      "protein_source": "Ricotta",
+      "carb_source": "Wholegrain bread"
+    },
+    "created": "2025-02-05T08:00:00Z",
+    "activate_date": "2025-02-05"
+  },
+  {
+    "id": "m1",
+    "category": "main",
+    "dietary": [],
     "title": "Classic Chicken Curry",
     "description": "A fragrant, rich chicken curry with tender pieces of chicken simmered in a golden coconut-tomato sauce. Warmly spiced with cumin, coriander, and turmeric — perfect for a cozy weeknight dinner.",
-    "image": "/images/Chicken-Curry-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Chicken-Curry-Recipe-Card-330x330.jpg",
+    "image": "/images/recipe-m1.jpg",
+    "image_card": "/images/recipe-m1.jpg",
     "prep_time": "00:15:00",
     "cook_time": "00:35:00",
     "cool_time": null,
@@ -16,84 +903,130 @@
     "video_url": null,
     "rating": 4.7,
     "number_of_ratings": 128,
-    "tags": ["Spicy", "Comfort Food", "Asian"],
-    "cuisines": ["Indian"],
-    "courses": ["Dinner", "Main Course"],
-    "instructions": "GroupName : Prepare the aromatics\n1. Heat oil in a large pan over medium heat. Add diced onion and cook for 8 minutes until golden.\n2. Add minced garlic and ginger. Cook for 1 minute until fragrant.\nGroupName : Build the sauce\n3. Stir in curry powder, cumin, coriander, and turmeric. Toast spices for 30 seconds.\n4. Add diced tomatoes and coconut milk. Stir to combine.\n5. Season with salt and bring to a gentle simmer.\nGroupName : Cook the chicken\n6. Add cubed chicken breast. Stir to coat in the sauce.\n7. Simmer for 20-25 minutes until chicken is cooked through and sauce has thickened.\n8. Taste and adjust seasoning. Garnish with fresh cilantro. Serve over basmati rice.",
-    "equipment": "Large skillet or dutch oven\nWooden spoon\nSharp knife\nCutting board",
+    "tags": [
+      "Spicy",
+      "Comfort Food",
+      "Asian",
+      "Meal Prep"
+    ],
+    "cuisines": [
+      "Indian"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "GroupName : Prepare the aromatics\n1. Heat oil in a large pan over medium heat. Add diced onion and cook for 8 minutes until golden.\n2. Add minced garlic and ginger. Cook for 1 minute until fragrant.\nGroupName : Build the sauce\n3. Stir in curry powder, cumin, coriander, and turmeric. Toast spices for 30 seconds.\n4. Add diced tomatoes and coconut milk. Stir to combine.\n5. Season with salt and bring to a gentle simmer.\nGroupName : Cook the chicken\n6. Add cubed chicken breast. Stir to coat in the sauce.\n7. Simmer for 20–25 minutes until chicken is cooked through and sauce has thickened.\n8. Taste and adjust seasoning. Garnish with fresh cilantro. Serve over basmati rice.",
+    "equipment": "Large skillet or Dutch oven\nWooden spoon\nSharp knife\nCutting board",
     "notes": "For a richer curry, use chicken thighs instead of breast.\nAdd a handful of spinach at the end for extra nutrition.\nLeftovers taste even better the next day as the flavours deepen.",
     "ingredients": [
-      { "ingredient": "Chicken breast", "quantity": 700, "unit": "g", "notes": "cubed", "groupName": null },
-      { "ingredient": "Yellow onion", "quantity": 1, "unit": "large", "notes": "diced", "groupName": null },
-      { "ingredient": "Garlic cloves", "quantity": 4, "unit": "cloves", "notes": "minced", "groupName": null },
-      { "ingredient": "Fresh ginger", "quantity": 1, "unit": "tbsp", "notes": "grated", "groupName": null },
-      { "ingredient": "Curry powder", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Ground cumin", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Ground coriander", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Ground turmeric", "quantity": 0.5, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Coconut milk", "quantity": 400, "unit": "ml", "notes": "full fat", "groupName": null },
-      { "ingredient": "Diced tomatoes", "quantity": 400, "unit": "g", "notes": "canned", "groupName": null },
-      { "ingredient": "Vegetable oil", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 1, "unit": "tsp", "notes": "to taste", "groupName": null }
+      {
+        "ingredient": "Chicken breast",
+        "quantity": 700,
+        "unit": "g",
+        "notes": "cubed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh ginger",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "grated",
+        "groupName": null
+      },
+      {
+        "ingredient": "Curry powder",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground coriander",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground turmeric",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Coconut milk",
+        "quantity": 400,
+        "unit": "ml",
+        "notes": "full fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Diced tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Vegetable oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": "to taste",
+        "groupName": null
+      }
     ],
-    "nutrition": {
-      "calories": 420, "carbohydrates": 14, "protein": 38, "fat": 22,
-      "saturated_fat": 12, "trans_fat": 0, "fiber": 3, "sugar": 6,
-      "sodium": 580, "cholesterol": 95, "potassium": 720,
-      "vitamin_a": 450, "vitamin_c": 18, "calcium": 65, "iron": 3.2
+    "nutrition_per_serving": {
+      "calories": 420,
+      "protein": 38,
+      "carbs": 14,
+      "fat": 22
+    },
+    "macro_tags": {
+      "protein_source": "Chicken breast",
+      "carb_source": "Diced tomatoes"
     },
     "created": "2025-01-15T10:00:00Z",
     "activate_date": "2025-01-15"
   },
   {
-    "id": "2",
-    "title": "Blueberry Muffins",
-    "description": "Soft, bakery-style blueberry muffins with a golden dome and bursting fresh blueberries in every bite. A classic breakfast treat that takes less than 30 minutes start to finish.",
-    "image": "/images/Blueberry-Muffins-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Blueberry-Muffins-Recipe-Card-330x330.jpg",
-    "prep_time": "00:10:00",
-    "cook_time": "00:20:00",
-    "cool_time": "00:10:00",
-    "total_time": "00:40:00",
-    "servings": 12,
-    "difficulty": "Easy",
-    "author": "Meal Prep Codex",
-    "source": "Original",
-    "video_url": null,
-    "rating": 4.9,
-    "number_of_ratings": 245,
-    "tags": ["Breakfast", "Baking", "Sweet"],
-    "cuisines": ["American"],
-    "courses": ["Breakfast", "Snack", "Dessert"],
-    "instructions": "1. Preheat oven to 200°C (400°F). Line a 12-cup muffin tin with paper liners.\n2. In a large bowl, whisk together flour, sugar, baking powder, and salt.\n3. In a separate bowl, whisk eggs, melted butter, milk, and vanilla extract.\n4. Pour wet ingredients into dry ingredients. Stir gently until just combined — do not overmix.\n5. Fold in the blueberries carefully.\n6. Divide batter evenly among the 12 muffin cups, filling each about 3/4 full.\n7. Bake for 18-20 minutes until a toothpick inserted in the centre comes out clean and tops are golden.\n8. Cool in tin for 5 minutes, then transfer to a wire rack.",
-    "equipment": "12-cup muffin tin\nMuffin liners\nMixing bowls\nWhisk\nRubber spatula",
-    "notes": "Do not overmix the batter — lumps are fine and lead to a more tender muffin.\nFresh or frozen blueberries both work. If using frozen, do not thaw first.\nStore in an airtight container at room temperature for up to 3 days.",
-    "ingredients": [
-      { "ingredient": "All-purpose flour", "quantity": 2, "unit": "cups", "notes": null, "groupName": null },
-      { "ingredient": "Granulated sugar", "quantity": 0.75, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Baking powder", "quantity": 2, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 0.5, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Eggs", "quantity": 2, "unit": "large", "notes": null, "groupName": null },
-      { "ingredient": "Unsalted butter", "quantity": 0.5, "unit": "cup", "notes": "melted and cooled", "groupName": null },
-      { "ingredient": "Whole milk", "quantity": 0.5, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Vanilla extract", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Fresh blueberries", "quantity": 1.5, "unit": "cups", "notes": null, "groupName": null }
-    ],
-    "nutrition": {
-      "calories": 215, "carbohydrates": 32, "protein": 4, "fat": 8,
-      "saturated_fat": 5, "trans_fat": 0, "fiber": 1, "sugar": 16,
-      "sodium": 195, "cholesterol": 52, "potassium": 95,
-      "vitamin_a": 260, "vitamin_c": 3, "calcium": 82, "iron": 1.1
-    },
-    "created": "2025-01-20T08:00:00Z",
-    "activate_date": "2025-01-20"
-  },
-  {
-    "id": "3",
+    "id": "m2",
+    "category": "main",
+    "dietary": [],
     "title": "Classic Bolognese",
-    "description": "A slow-cooked Italian meat sauce that clings beautifully to tagliatelle or pappardelle. Made with a soffritto base, ground beef, pancetta, white wine, and a splash of milk for silky richness.",
-    "image": "/images/Bolognese-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Bolognese-Recipe-Card-330x330.jpg",
+    "description": "A slow-cooked Italian meat sauce that clings beautifully to tagliatelle or pappardelle. Made with a soffritto base, ground beef, and a splash of milk for silky richness.",
+    "image": "/images/recipe-m2.jpg",
+    "image_card": "/images/recipe-m2.jpg",
     "prep_time": "00:15:00",
     "cook_time": "02:00:00",
     "cool_time": null,
@@ -105,83 +1038,123 @@
     "video_url": null,
     "rating": 4.8,
     "number_of_ratings": 189,
-    "tags": ["Italian", "Pasta", "Comfort Food", "Meal Prep"],
-    "cuisines": ["Italian"],
-    "courses": ["Dinner", "Main Course"],
-    "instructions": "GroupName : Soffritto base\n1. Heat olive oil and butter in a large heavy-bottomed pot over medium heat.\n2. Add diced onion, carrot, and celery. Cook for 10 minutes, stirring, until softened and lightly golden.\nGroupName : Brown the meat\n3. Add pancetta and cook for 3 minutes until it renders its fat.\n4. Add ground beef, breaking it up with a spoon. Season with salt and pepper. Cook until no pink remains, about 8 minutes.\nGroupName : Build the sauce\n5. Pour in white wine and cook until evaporated, about 3 minutes.\n6. Add whole milk, stir, and cook until absorbed, about 5 minutes.\n7. Stir in tomato paste and cook for 2 minutes.\n8. Add canned crushed tomatoes. Stir to combine. Reduce heat to very low.\n9. Simmer uncovered for 1.5-2 hours, stirring occasionally, until sauce is thick and rich.\n10. Taste, adjust seasoning. Serve over fresh tagliatelle with grated Parmigiano.",
-    "equipment": "Large heavy-bottomed pot or Dutch oven\nWooden spoon\nSharp knife\nCutting board",
-    "notes": "The longer the simmer, the better the bolognese. Don't rush it.\nFreeze the sauce in portions for up to 3 months.\nAuthentic bolognese uses very little tomato — resist the urge to add more.",
-    "ingredients": [
-      { "ingredient": "Ground beef", "quantity": 500, "unit": "g", "notes": "80/20 fat ratio", "groupName": null },
-      { "ingredient": "Pancetta", "quantity": 100, "unit": "g", "notes": "diced", "groupName": null },
-      { "ingredient": "Yellow onion", "quantity": 1, "unit": "medium", "notes": "finely diced", "groupName": null },
-      { "ingredient": "Carrot", "quantity": 1, "unit": "medium", "notes": "finely diced", "groupName": null },
-      { "ingredient": "Celery stalks", "quantity": 2, "unit": "stalks", "notes": "finely diced", "groupName": null },
-      { "ingredient": "White wine", "quantity": 0.5, "unit": "cup", "notes": "dry", "groupName": null },
-      { "ingredient": "Whole milk", "quantity": 0.25, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Tomato paste", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Crushed tomatoes", "quantity": 400, "unit": "g", "notes": "canned", "groupName": null },
-      { "ingredient": "Olive oil", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Unsalted butter", "quantity": 1, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Parmigiano-Reggiano", "quantity": 0.5, "unit": "cup", "notes": "grated, to serve", "groupName": null }
+    "tags": [
+      "Italian",
+      "Pasta",
+      "Comfort Food",
+      "Meal Prep"
     ],
-    "nutrition": {
-      "calories": 480, "carbohydrates": 10, "protein": 32, "fat": 28,
-      "saturated_fat": 11, "trans_fat": 0.5, "fiber": 2, "sugar": 6,
-      "sodium": 620, "cholesterol": 110, "potassium": 680,
-      "vitamin_a": 2800, "vitamin_c": 12, "calcium": 95, "iron": 4.1
+    "cuisines": [
+      "Italian"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "GroupName : Soffritto base\n1. Heat olive oil and butter in a large heavy-bottomed pot over medium heat.\n2. Add diced onion, carrot, and celery. Cook for 10 minutes, stirring, until softened and lightly golden.\nGroupName : Brown the meat\n3. Add ground beef, breaking it up with a spoon. Season with salt and pepper. Cook until no pink remains, about 8 minutes.\nGroupName : Build the sauce\n4. Pour in white wine and cook until evaporated, about 3 minutes.\n5. Add whole milk, stir, and cook until absorbed, about 5 minutes.\n6. Stir in tomato paste and cook for 2 minutes.\n7. Add canned crushed tomatoes. Stir to combine. Reduce heat to very low.\n8. Simmer uncovered for 1.5–2 hours, stirring occasionally, until sauce is thick and rich.\n9. Taste, adjust seasoning. Serve over fresh tagliatelle with grated Parmigiano.",
+    "equipment": "Large heavy-bottomed pot or Dutch oven\nWooden spoon\nSharp knife\nCutting board",
+    "notes": "The longer the simmer, the better the bolognese. Don't rush it.\nFreeze the sauce in portions for up to 3 months.",
+    "ingredients": [
+      {
+        "ingredient": "Ground beef",
+        "quantity": 500,
+        "unit": "g",
+        "notes": "80/20 fat ratio",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "finely diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Carrot",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "finely diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Celery",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "finely diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "White wine",
+        "quantity": 120,
+        "unit": "ml",
+        "notes": "dry",
+        "groupName": null
+      },
+      {
+        "ingredient": "Whole milk",
+        "quantity": 60,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Tomato paste",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Unsalted butter",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Tagliatelle pasta",
+        "quantity": 360,
+        "unit": "g",
+        "notes": "dry, for serving",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 520,
+      "protein": 34,
+      "carbs": 52,
+      "fat": 16
+    },
+    "macro_tags": {
+      "protein_source": "Ground beef",
+      "carb_source": "Tagliatelle pasta"
     },
     "created": "2025-02-01T12:00:00Z",
     "activate_date": "2025-02-01"
   },
   {
-    "id": "4",
-    "title": "Classic Banana Bread",
-    "description": "Moist, tender banana bread packed with ripe banana flavour and a hint of vanilla. Perfect for using up overripe bananas — this loaf disappears fast.",
-    "image": "/images/Banana-Bread-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Banana-Bread-Recipe-Card-330x330.jpg",
-    "prep_time": "00:10:00",
-    "cook_time": "01:00:00",
-    "cool_time": "00:15:00",
-    "total_time": "01:25:00",
-    "servings": 10,
-    "difficulty": "Easy",
-    "author": "Meal Prep Codex",
-    "source": "Original",
-    "video_url": null,
-    "rating": 4.8,
-    "number_of_ratings": 312,
-    "tags": ["Baking", "Breakfast", "Sweet", "Vegetarian"],
-    "cuisines": ["American"],
-    "courses": ["Breakfast", "Snack", "Dessert"],
-    "instructions": "1. Preheat oven to 175°C (350°F). Grease a 9×5 inch loaf pan.\n2. In a large bowl, mash the bananas with a fork until smooth.\n3. Mix in melted butter, sugar, egg, and vanilla extract.\n4. Sprinkle baking soda and salt over the mixture and stir to combine.\n5. Fold in flour until just combined. Do not overmix.\n6. Pour batter into the prepared loaf pan.\n7. Bake for 55-65 minutes until a toothpick inserted in the centre comes out clean.\n8. Cool in the pan for 10 minutes, then turn out onto a wire rack to cool completely.",
-    "equipment": "9x5 inch loaf pan\nLarge mixing bowl\nFork or potato masher\nRubber spatula",
-    "notes": "The riper and blacker the bananas, the sweeter and more flavourful the bread.\nAdd chocolate chips or walnuts for extra texture.\nWrap in cling film and store at room temperature for up to 4 days, or freeze sliced.",
-    "ingredients": [
-      { "ingredient": "Ripe bananas", "quantity": 3, "unit": "large", "notes": "very ripe, mashed", "groupName": null },
-      { "ingredient": "All-purpose flour", "quantity": 1.5, "unit": "cups", "notes": null, "groupName": null },
-      { "ingredient": "Granulated sugar", "quantity": 0.75, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Unsalted butter", "quantity": 0.33, "unit": "cup", "notes": "melted", "groupName": null },
-      { "ingredient": "Egg", "quantity": 1, "unit": "large", "notes": "beaten", "groupName": null },
-      { "ingredient": "Vanilla extract", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Baking soda", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 0.25, "unit": "tsp", "notes": null, "groupName": null }
-    ],
-    "nutrition": {
-      "calories": 195, "carbohydrates": 34, "protein": 3, "fat": 6,
-      "saturated_fat": 3.5, "trans_fat": 0, "fiber": 1.5, "sugar": 18,
-      "sodium": 170, "cholesterol": 35, "potassium": 210,
-      "vitamin_a": 185, "vitamin_c": 4, "calcium": 15, "iron": 0.9
-    },
-    "created": "2025-02-10T09:00:00Z",
-    "activate_date": "2025-02-10"
-  },
-  {
-    "id": "5",
+    "id": "m3",
+    "category": "main",
+    "dietary": [],
     "title": "Hearty Beef Stew",
-    "description": "A soul-warming beef stew with melt-in-your-mouth chunks of braised beef, tender vegetables, and a deep, glossy wine-enriched broth. Perfect for cold evenings and meal prep.",
-    "image": "/images/Beef-Stew-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Beef-Stew-Recipe-Card-330x330.jpg",
+    "description": "A soul-warming beef stew with melt-in-your-mouth chunks of braised beef, tender vegetables, and a deep, glossy wine-enriched broth.",
+    "image": null,
+    "image_card": null,
     "prep_time": "00:20:00",
     "cook_time": "02:30:00",
     "cool_time": null,
@@ -193,90 +1166,145 @@
     "video_url": null,
     "rating": 4.9,
     "number_of_ratings": 201,
-    "tags": ["Comfort Food", "Meal Prep", "Winter", "One-Pot"],
-    "cuisines": ["French", "American"],
-    "courses": ["Dinner", "Main Course"],
-    "instructions": "GroupName : Prep and sear\n1. Pat beef dry with paper towels. Season generously with salt and pepper.\n2. Heat oil in a large Dutch oven over high heat. Sear beef in batches until browned on all sides, 3-4 minutes per batch. Set aside.\n3. Reduce heat to medium. Add onion and cook until softened, 5 minutes.\n4. Add garlic and tomato paste, cook 1 minute.\nGroupName : Build the stew\n5. Pour in red wine, scraping up the browned bits from the bottom.\n6. Add beef broth, thyme, bay leaves, and Worcestershire sauce. Return beef to pot.\n7. Bring to a boil, then reduce to a gentle simmer. Cover and cook for 1.5 hours.\nGroupName : Add vegetables\n8. Add potatoes and carrots. Cook uncovered for 30 more minutes until vegetables are tender.\n9. Mix cornstarch with cold water, stir into stew to thicken.\n10. Taste and adjust seasoning. Remove thyme sprigs and bay leaves. Serve in bowls.",
-    "equipment": "Large Dutch oven\nWooden spoon\nSharp knife\nCutting board",
-    "notes": "Use a well-marbled cut like chuck roast for the best texture — it becomes incredibly tender.\nMake it a day ahead; it tastes even better reheated.\nStore in the fridge for up to 4 days or freeze for 3 months.",
-    "ingredients": [
-      { "ingredient": "Beef chuck roast", "quantity": 1, "unit": "kg", "notes": "cut into 4cm cubes", "groupName": null },
-      { "ingredient": "Yellow onion", "quantity": 1, "unit": "large", "notes": "diced", "groupName": null },
-      { "ingredient": "Garlic cloves", "quantity": 4, "unit": "cloves", "notes": "minced", "groupName": null },
-      { "ingredient": "Red wine", "quantity": 1, "unit": "cup", "notes": "dry", "groupName": null },
-      { "ingredient": "Beef broth", "quantity": 3, "unit": "cups", "notes": null, "groupName": null },
-      { "ingredient": "Tomato paste", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Potatoes", "quantity": 500, "unit": "g", "notes": "peeled and quartered", "groupName": null },
-      { "ingredient": "Carrots", "quantity": 3, "unit": "medium", "notes": "cut into chunks", "groupName": null },
-      { "ingredient": "Fresh thyme", "quantity": 4, "unit": "sprigs", "notes": null, "groupName": null },
-      { "ingredient": "Bay leaves", "quantity": 2, "unit": "leaves", "notes": null, "groupName": null },
-      { "ingredient": "Worcestershire sauce", "quantity": 1, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Cornstarch", "quantity": 2, "unit": "tbsp", "notes": "mixed with 3 tbsp cold water", "groupName": null },
-      { "ingredient": "Vegetable oil", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null }
+    "tags": [
+      "Comfort Food",
+      "Meal Prep",
+      "Winter",
+      "One-Pot"
     ],
-    "nutrition": {
-      "calories": 520, "carbohydrates": 28, "protein": 45, "fat": 18,
-      "saturated_fat": 6, "trans_fat": 0, "fiber": 4, "sugar": 5,
-      "sodium": 720, "cholesterol": 130, "potassium": 1100,
-      "vitamin_a": 5200, "vitamin_c": 22, "calcium": 75, "iron": 5.8
+    "cuisines": [
+      "French",
+      "American"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "GroupName : Prep and sear\n1. Pat beef dry with paper towels. Season generously with salt and pepper.\n2. Heat oil in a large Dutch oven over high heat. Sear beef in batches until browned on all sides, 3–4 minutes per batch. Set aside.\n3. Reduce heat to medium. Add onion and cook until softened, 5 minutes.\n4. Add garlic and tomato paste, cook 1 minute.\nGroupName : Build the stew\n5. Pour in red wine, scraping up the browned bits from the bottom.\n6. Add beef broth, thyme, bay leaves, and Worcestershire sauce. Return beef to pot.\n7. Bring to a boil, then reduce to a gentle simmer. Cover and cook for 1.5 hours.\nGroupName : Add vegetables\n8. Add potatoes and carrots. Cook uncovered for 30 more minutes until vegetables are tender.\n9. Mix cornstarch with 45 ml cold water, stir into stew to thicken.\n10. Taste and adjust seasoning. Remove thyme sprigs and bay leaves. Serve in bowls.",
+    "equipment": "Large Dutch oven\nWooden spoon\nSharp knife\nCutting board",
+    "notes": "Use a well-marbled cut like chuck roast for the best texture.\nMake it a day ahead; it tastes even better reheated.",
+    "ingredients": [
+      {
+        "ingredient": "Beef chuck roast",
+        "quantity": 1000,
+        "unit": "g",
+        "notes": "cut into 4 cm cubes",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Red wine",
+        "quantity": 240,
+        "unit": "ml",
+        "notes": "dry",
+        "groupName": null
+      },
+      {
+        "ingredient": "Beef broth",
+        "quantity": 720,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Tomato paste",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Potatoes",
+        "quantity": 500,
+        "unit": "g",
+        "notes": "peeled and quartered",
+        "groupName": null
+      },
+      {
+        "ingredient": "Carrots",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "cut into chunks",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh thyme",
+        "quantity": 4,
+        "unit": "sprigs",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Bay leaves",
+        "quantity": 2,
+        "unit": "leaves",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Worcestershire sauce",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cornstarch",
+        "quantity": 20,
+        "unit": "g",
+        "notes": "mixed with 45 ml cold water",
+        "groupName": null
+      },
+      {
+        "ingredient": "Vegetable oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 480,
+      "protein": 40,
+      "carbs": 28,
+      "fat": 18
+    },
+    "macro_tags": {
+      "protein_source": "Beef chuck roast",
+      "carb_source": "Potatoes"
     },
     "created": "2025-03-01T14:00:00Z",
     "activate_date": "2025-03-01"
   },
   {
-    "id": "6",
-    "title": "Homemade Granola",
-    "description": "Crunchy, clusters of golden oats tossed with honey, coconut oil, almonds, and seeds. Incredibly versatile — serve with yoghurt, milk, or straight out of the jar.",
-    "image": "/images/Granola-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Granola-Recipe-Card-330x330.jpg",
-    "prep_time": "00:10:00",
-    "cook_time": "00:25:00",
-    "cool_time": "00:20:00",
-    "total_time": "00:55:00",
-    "servings": 8,
-    "difficulty": "Easy",
-    "author": "Meal Prep Codex",
-    "source": "Original",
-    "video_url": null,
-    "rating": 4.6,
-    "number_of_ratings": 87,
-    "tags": ["Breakfast", "Healthy", "Vegan", "Meal Prep"],
-    "cuisines": ["American"],
-    "courses": ["Breakfast", "Snack"],
-    "instructions": "1. Preheat oven to 160°C (325°F). Line a large baking sheet with parchment paper.\n2. In a large bowl, mix together oats, almonds, pumpkin seeds, sunflower seeds, cinnamon, and salt.\n3. In a small saucepan, warm honey and coconut oil over low heat until melted. Add vanilla extract.\n4. Pour the liquid over the oat mixture. Stir until everything is well coated.\n5. Spread evenly on the baking sheet in a thin layer.\n6. Bake for 20-25 minutes, stirring halfway, until golden brown.\n7. Remove from oven. Do not stir while cooling — this creates the clusters.\n8. Cool completely on the pan. Stir in dried cranberries. Store in an airtight jar for up to 2 weeks.",
-    "equipment": "Large baking sheet\nParchment paper\nLarge mixing bowl\nSmall saucepan",
-    "notes": "Do not stir the granola while it cools — this is what creates the beloved clusters.\nCustomise with any nuts, seeds, or dried fruits you like.\nFor extra-chunky granola, press down firmly with a spatula before baking.",
-    "ingredients": [
-      { "ingredient": "Rolled oats", "quantity": 3, "unit": "cups", "notes": "old-fashioned", "groupName": null },
-      { "ingredient": "Raw almonds", "quantity": 0.75, "unit": "cup", "notes": "roughly chopped", "groupName": null },
-      { "ingredient": "Pumpkin seeds", "quantity": 0.25, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Sunflower seeds", "quantity": 0.25, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Honey", "quantity": 0.33, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Coconut oil", "quantity": 0.25, "unit": "cup", "notes": "melted", "groupName": null },
-      { "ingredient": "Vanilla extract", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Ground cinnamon", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 0.25, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Dried cranberries", "quantity": 0.5, "unit": "cup", "notes": "added after baking", "groupName": null }
+    "id": "m4",
+    "category": "main",
+    "dietary": [
+      "vegan",
+      "vegetarian"
     ],
-    "nutrition": {
-      "calories": 310, "carbohydrates": 40, "protein": 8, "fat": 13,
-      "saturated_fat": 5, "trans_fat": 0, "fiber": 4.5, "sugar": 15,
-      "sodium": 80, "cholesterol": 0, "potassium": 280,
-      "vitamin_a": 0, "vitamin_c": 1, "calcium": 55, "iron": 2.8
-    },
-    "created": "2025-03-10T07:00:00Z",
-    "activate_date": "2025-03-10"
-  },
-  {
-    "id": "7",
-    "title": "Crispy Falafel",
-    "description": "Light, herby, and irresistibly crispy falafel made from scratch with soaked chickpeas, fresh herbs, and aromatic spices. Serve in pita with tahini and pickled vegetables.",
-    "image": "/images/Falafel-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Falafel-Recipe-Card-330x330.jpg",
+    "title": "Crispy Falafel Bowl",
+    "description": "Light, herby, and irresistibly crispy falafel served over brown rice with tahini sauce, cucumber, and cherry tomatoes. A complete, protein-rich vegan meal.",
+    "image": null,
+    "image_card": null,
     "prep_time": "00:20:00",
-    "cook_time": "00:15:00",
+    "cook_time": "00:25:00",
     "cool_time": null,
-    "total_time": "00:35:00",
+    "total_time": "00:45:00",
     "servings": 4,
     "difficulty": "Medium",
     "author": "Meal Prep Codex",
@@ -284,74 +1312,2094 @@
     "video_url": null,
     "rating": 4.7,
     "number_of_ratings": 142,
-    "tags": ["Vegan", "Vegetarian", "Middle Eastern", "Healthy"],
-    "cuisines": ["Middle Eastern"],
-    "courses": ["Lunch", "Dinner", "Appetizer"],
-    "instructions": "GroupName : Make the falafel mixture\n1. Drain soaked chickpeas (do NOT use canned — they must be dried soaked chickpeas).\n2. Place chickpeas, onion, garlic, parsley, cilantro, cumin, coriander, and salt in a food processor.\n3. Pulse until finely ground but not a paste — the mixture should hold together when pressed.\n4. Transfer to a bowl. Cover and refrigerate for 30 minutes.\nGroupName : Shape and cook\n5. Add baking powder and flour to the mixture. Stir to combine.\n6. Using wet hands, shape 2 tablespoons of mixture into small patties or balls.\n7. Heat 5cm of oil in a deep skillet to 175°C (350°F).\n8. Fry falafel in batches for 3-4 minutes until deep golden on all sides.\n9. Drain on paper towels. Serve immediately with tahini sauce, pita, and fresh salad.",
-    "equipment": "Food processor\nDeep skillet or pot\nThermometer\nSlotted spoon\nPaper towels",
-    "notes": "You must use dried chickpeas soaked overnight, not canned — canned chickpeas are too wet.\nThe mixture can be refrigerated for up to 24 hours before frying.\nFor baked falafel: brush with oil and bake at 200°C (400°F) for 25 minutes, flipping halfway.",
-    "ingredients": [
-      { "ingredient": "Dried chickpeas", "quantity": 250, "unit": "g", "notes": "soaked overnight in cold water", "groupName": null },
-      { "ingredient": "Yellow onion", "quantity": 0.5, "unit": "medium", "notes": "roughly chopped", "groupName": null },
-      { "ingredient": "Garlic cloves", "quantity": 4, "unit": "cloves", "notes": null, "groupName": null },
-      { "ingredient": "Fresh parsley", "quantity": 1, "unit": "cup", "notes": "packed", "groupName": null },
-      { "ingredient": "Fresh cilantro", "quantity": 0.5, "unit": "cup", "notes": "packed", "groupName": null },
-      { "ingredient": "Ground cumin", "quantity": 1.5, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Ground coriander", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 1, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Baking powder", "quantity": 0.5, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "All-purpose flour", "quantity": 2, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Vegetable oil", "quantity": 2, "unit": "cups", "notes": "for frying", "groupName": null }
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "Middle Eastern",
+      "Healthy",
+      "Meal Prep"
     ],
-    "nutrition": {
-      "calories": 290, "carbohydrates": 35, "protein": 12, "fat": 12,
-      "saturated_fat": 1.5, "trans_fat": 0, "fiber": 9, "sugar": 4,
-      "sodium": 490, "cholesterol": 0, "potassium": 560,
-      "vitamin_a": 1200, "vitamin_c": 25, "calcium": 120, "iron": 4.5
+    "cuisines": [
+      "Middle Eastern"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "GroupName : Make the falafel mixture\n1. Drain soaked chickpeas (do NOT use canned — they must be dried soaked chickpeas).\n2. Place chickpeas, onion, garlic, parsley, cilantro, cumin, coriander, and salt in a food processor.\n3. Pulse until finely ground but not a paste. Refrigerate 30 minutes.\nGroupName : Shape and cook\n4. Add baking powder and flour to the mixture. Stir to combine.\n5. Shape into small patties (about 30 g each). Heat oil in a skillet to 175°C.\n6. Fry in batches for 3–4 minutes until deep golden. Drain on paper towels.\nGroupName : Assemble the bowls\n7. Cook brown rice according to package directions.\n8. Divide rice among 4 bowls. Top with falafel, cucumber, cherry tomatoes, and a generous drizzle of tahini.",
+    "equipment": "Food processor\nDeep skillet\nSaucepan",
+    "notes": "You must use dried chickpeas soaked overnight, not canned. The mixture can be refrigerated for up to 24 hours before frying.",
+    "ingredients": [
+      {
+        "ingredient": "Dried chickpeas",
+        "quantity": 250,
+        "unit": "g",
+        "notes": "soaked overnight in cold water",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "roughly chopped",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh parsley",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "packed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh cilantro",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "packed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground coriander",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Baking powder",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "All-purpose flour",
+        "quantity": 20,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Vegetable oil",
+        "quantity": 120,
+        "unit": "ml",
+        "notes": "for frying",
+        "groupName": null
+      },
+      {
+        "ingredient": "Brown rice",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "dry weight, for serving",
+        "groupName": null
+      },
+      {
+        "ingredient": "Cucumber",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Tahini",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "for drizzling",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 480,
+      "protein": 16,
+      "carbs": 62,
+      "fat": 20
+    },
+    "macro_tags": {
+      "protein_source": "Dried chickpeas",
+      "carb_source": "Brown rice"
     },
     "created": "2025-04-01T11:00:00Z",
     "activate_date": "2025-04-01"
   },
   {
-    "id": "8",
-    "title": "Classic French Crêpes",
-    "description": "Delicate, paper-thin crêpes with lightly crisp edges and a buttery flavour. Fill them sweet with lemon and sugar, or savoury with ham and cheese — endlessly versatile.",
-    "image": "/images/Crepes-Recipe-Card-330x330.jpg",
-    "image_card": "/images/Crepes-Recipe-Card-330x330.jpg",
-    "prep_time": "00:05:00",
+    "id": "m5",
+    "category": "main",
+    "dietary": [],
+    "title": "Baked Salmon with Roasted Vegetables",
+    "description": "Oven-baked salmon fillets with a honey-mustard glaze alongside roasted broccoli and sweet potato. Clean, protein-packed, and on the table in 30 minutes.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:25:00",
+    "cool_time": null,
+    "total_time": "00:35:00",
+    "servings": 2,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 215,
+    "tags": [
+      "Healthy",
+      "High-Protein",
+      "Quick",
+      "Meal Prep"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "1. Preheat oven to 200°C. Line a baking sheet with parchment paper.\n2. Mix honey, Dijon mustard, olive oil, garlic, salt and pepper to make the glaze.\n3. Toss sweet potato and broccoli with olive oil and salt. Spread on one half of the baking sheet.\n4. Place salmon fillets on the other half. Brush with the honey-mustard glaze.\n5. Roast for 20–25 minutes until salmon is cooked through and vegetables are golden.\n6. Serve immediately.",
+    "equipment": "Baking sheet\nParchment paper\nSmall bowl",
+    "notes": "Salmon is done when it flakes easily with a fork and the thickest part has turned opaque. Do not overcook.",
+    "ingredients": [
+      {
+        "ingredient": "Salmon fillets",
+        "quantity": 2,
+        "unit": "fillets",
+        "notes": "about 150 g each, skin-on",
+        "groupName": null
+      },
+      {
+        "ingredient": "Sweet potato",
+        "quantity": 250,
+        "unit": "g",
+        "notes": "peeled, cut into 2 cm cubes",
+        "groupName": null
+      },
+      {
+        "ingredient": "Broccoli",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "cut into florets",
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 20,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Dijon mustard",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": "divided",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 2,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 480,
+      "protein": 38,
+      "carbs": 32,
+      "fat": 22
+    },
+    "macro_tags": {
+      "protein_source": "Salmon fillets",
+      "carb_source": "Sweet potato"
+    },
+    "created": "2025-04-10T12:00:00Z",
+    "activate_date": "2025-04-10"
+  },
+  {
+    "id": "m6",
+    "category": "main",
+    "dietary": [],
+    "title": "Grilled Chicken & Quinoa Bowl",
+    "description": "Marinated, grilled chicken breast over fluffy quinoa with baby spinach, roasted cherry tomatoes, and a lemon-tahini dressing. Clean, balanced, and meal-prep-friendly.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:15:00",
+    "cook_time": "00:25:00",
+    "cool_time": null,
+    "total_time": "00:40:00",
+    "servings": 2,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 198,
+    "tags": [
+      "High-Protein",
+      "Healthy",
+      "Meal Prep",
+      "Gluten-Free"
+    ],
+    "cuisines": [
+      "Mediterranean"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Mix olive oil, lemon juice, garlic, oregano, salt and pepper for the marinade. Coat chicken breasts and marinate at least 15 minutes.\n2. Cook quinoa: bring 2 parts water to 1 part quinoa to a boil, reduce heat, cover and simmer 15 minutes. Fluff with a fork.\n3. Preheat a grill pan or skillet over medium-high heat. Grill chicken 5–6 minutes per side until cooked through. Rest 5 minutes, then slice.\n4. For the dressing, mix tahini, lemon juice, garlic, and water until smooth.\n5. Divide quinoa among bowls. Top with spinach, sliced chicken, cherry tomatoes. Drizzle with dressing.",
+    "equipment": "Grill pan or skillet\nSmall saucepan\nBowls",
+    "notes": "Cook extra quinoa and store for the week. The bowls keep for 3 days in the fridge if dressing is stored separately.",
+    "ingredients": [
+      {
+        "ingredient": "Chicken breast",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "2 medium breasts",
+        "groupName": null
+      },
+      {
+        "ingredient": "Quinoa",
+        "quantity": 160,
+        "unit": "g",
+        "notes": "dry",
+        "groupName": null
+      },
+      {
+        "ingredient": "Baby spinach",
+        "quantity": 60,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Lemon juice",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 3,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried oregano",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Tahini",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 490,
+      "protein": 45,
+      "carbs": 38,
+      "fat": 18
+    },
+    "macro_tags": {
+      "protein_source": "Chicken breast",
+      "carb_source": "Quinoa"
+    },
+    "created": "2025-04-15T12:00:00Z",
+    "activate_date": "2025-04-15"
+  },
+  {
+    "id": "m7",
+    "category": "main",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Shakshuka",
+    "description": "Eggs poached directly in a spiced, fragrant tomato and pepper sauce. A Middle Eastern classic that comes together in one pan and is perfect any time of day.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:25:00",
+    "cool_time": null,
+    "total_time": "00:35:00",
+    "servings": 2,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.9,
+    "number_of_ratings": 267,
+    "tags": [
+      "Vegetarian",
+      "One-Pan",
+      "Healthy",
+      "Middle Eastern"
+    ],
+    "cuisines": [
+      "Middle Eastern"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Heat olive oil in a wide skillet or cast-iron pan over medium heat.\n2. Add onion and pepper. Cook 8 minutes until soft.\n3. Add garlic, cumin, paprika, and chilli flakes. Cook 1 minute.\n4. Add crushed tomatoes and tomato paste. Season with salt. Simmer 10 minutes until sauce thickens.\n5. Make 4 wells in the sauce. Crack one egg into each well.\n6. Cover and cook 5–8 minutes until whites are set but yolks are still runny.\n7. Scatter with crumbled feta and fresh parsley. Serve with crusty bread.",
+    "equipment": "Wide skillet or cast-iron pan\nLid",
+    "notes": "Don't rush the sauce — let it simmer until deep red and thick before adding eggs. Serve directly from the pan at the table.",
+    "ingredients": [
+      {
+        "ingredient": "Eggs",
+        "quantity": 4,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Red bell pepper",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 3,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Tomato paste",
+        "quantity": 20,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 4,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Smoked paprika",
+        "quantity": 4,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried chilli flakes",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Feta cheese",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "crumbled, for serving",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh parsley",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "chopped, for serving",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 380,
+      "protein": 24,
+      "carbs": 20,
+      "fat": 24
+    },
+    "macro_tags": {
+      "protein_source": "Eggs",
+      "carb_source": "Crushed tomatoes"
+    },
+    "created": "2025-04-20T12:00:00Z",
+    "activate_date": "2025-04-20"
+  },
+  {
+    "id": "m8",
+    "category": "main",
+    "dietary": [],
+    "title": "Turkey Meatballs with Marinara",
+    "description": "Juicy oven-baked turkey meatballs simmered in a classic tomato marinara, served over whole wheat spaghetti. High-protein, lower in fat than beef meatballs, and great for meal prep.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:20:00",
+    "cook_time": "00:30:00",
+    "cool_time": null,
+    "total_time": "00:50:00",
+    "servings": 4,
+    "difficulty": "Medium",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 183,
+    "tags": [
+      "High-Protein",
+      "Meal Prep",
+      "Italian"
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "GroupName : Make the meatballs\n1. Preheat oven to 200°C. Line a baking sheet with parchment paper.\n2. In a bowl, combine ground turkey, breadcrumbs, egg, Parmesan, garlic, oregano, salt and pepper. Mix well.\n3. Roll into 20 g balls and arrange on the baking sheet.\n4. Bake 18–20 minutes until golden and cooked through.\nGroupName : Marinara & assembly\n5. Heat olive oil in a saucepan. Add garlic and cook 1 minute. Add crushed tomatoes, salt, basil, and sugar. Simmer 15 minutes.\n6. Add baked meatballs to the marinara. Simmer together 5 minutes.\n7. Cook pasta according to package directions. Serve meatballs and sauce over pasta.",
+    "equipment": "Baking sheet\nParchment paper\nLarge saucepan\nLarge pot for pasta",
+    "notes": "Meatballs and sauce freeze perfectly for up to 3 months. Cook pasta fresh when serving.",
+    "ingredients": [
+      {
+        "ingredient": "Ground turkey",
+        "quantity": 500,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Breadcrumbs",
+        "quantity": 60,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Egg",
+        "quantity": 1,
+        "unit": "large",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Parmesan",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "grated",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": "minced, divided",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried oregano",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh basil",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Whole wheat spaghetti",
+        "quantity": 320,
+        "unit": "g",
+        "notes": "dry, for serving",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 510,
+      "protein": 42,
+      "carbs": 54,
+      "fat": 14
+    },
+    "macro_tags": {
+      "protein_source": "Ground turkey",
+      "carb_source": "Whole wheat spaghetti"
+    },
+    "created": "2025-04-25T12:00:00Z",
+    "activate_date": "2025-04-25"
+  },
+  {
+    "id": "m9",
+    "category": "main",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Lentil & Vegetable Soup",
+    "description": "A hearty, warming red lentil soup packed with tomatoes, carrots, and cumin. Thick, filling, and completely plant-based — exceptional value for a vegan high-protein meal.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:35:00",
+    "cool_time": null,
+    "total_time": "00:45:00",
+    "servings": 4,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 194,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "Meal Prep",
+      "High-Protein",
+      "One-Pot"
+    ],
+    "cuisines": [
+      "Middle Eastern"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Heat olive oil in a large pot over medium heat. Add onion and carrot. Cook 8 minutes until soft.\n2. Add garlic, cumin, coriander, and smoked paprika. Cook 1 minute.\n3. Add red lentils, crushed tomatoes, and vegetable broth. Season with salt.\n4. Bring to a boil, then simmer 25–30 minutes until lentils are completely soft and soup is thick.\n5. Add lemon juice. Use a stick blender to partially blend for a creamier texture, or leave chunky.\n6. Taste and adjust salt. Serve with crusty bread.",
+    "equipment": "Large pot\nStick blender (optional)",
+    "notes": "Red lentils cook quickly and do not need soaking. The soup thickens as it sits — add extra broth when reheating.",
+    "ingredients": [
+      {
+        "ingredient": "Red lentils",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "rinsed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Carrots",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Crushed tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Vegetable broth",
+        "quantity": 1000,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground coriander",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Smoked paprika",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Lemon juice",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 340,
+      "protein": 18,
+      "carbs": 52,
+      "fat": 8
+    },
+    "macro_tags": {
+      "protein_source": "Red lentils",
+      "carb_source": "Red lentils"
+    },
+    "created": "2025-05-01T12:00:00Z",
+    "activate_date": "2025-05-01"
+  },
+  {
+    "id": "m10",
+    "category": "main",
+    "dietary": [],
+    "title": "Chicken & Brown Rice Stir-Fry",
+    "description": "Tender chicken strips wok-fried with broccoli, carrots, and snap peas in a savoury soy-ginger sauce, served over brown rice. Fast, clean, and high-protein.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:15:00",
     "cook_time": "00:20:00",
-    "cool_time": "00:30:00",
-    "total_time": "00:55:00",
+    "cool_time": null,
+    "total_time": "00:35:00",
+    "servings": 4,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 176,
+    "tags": [
+      "High-Protein",
+      "Quick",
+      "Asian",
+      "Healthy",
+      "Meal Prep"
+    ],
+    "cuisines": [
+      "Asian"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Cook brown rice according to package directions.\n2. Whisk together soy sauce, sesame oil, ginger, garlic, honey, and cornstarch for the sauce.\n3. Heat vegetable oil in a wok or large skillet over high heat. Add chicken strips. Stir-fry 4–5 minutes until cooked through. Remove and set aside.\n4. Add broccoli and carrots to the wok. Stir-fry 3 minutes. Add snap peas, cook 1 minute more.\n5. Return chicken to the wok. Pour over the sauce. Toss everything together and cook 1–2 minutes until sauce thickens.\n6. Serve over brown rice. Garnish with sesame seeds.",
+    "equipment": "Wok or large skillet\nSaucepan for rice\nWhisk",
+    "notes": "High heat is essential for a good stir-fry — don't crowd the pan or the chicken will steam instead of sear.",
+    "ingredients": [
+      {
+        "ingredient": "Chicken breast",
+        "quantity": 600,
+        "unit": "g",
+        "notes": "sliced into thin strips",
+        "groupName": null
+      },
+      {
+        "ingredient": "Brown rice",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "dry",
+        "groupName": null
+      },
+      {
+        "ingredient": "Broccoli",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "cut into florets",
+        "groupName": null
+      },
+      {
+        "ingredient": "Carrots",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "julienned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Snap peas",
+        "quantity": 100,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Soy sauce",
+        "quantity": 60,
+        "unit": "ml",
+        "notes": "low-sodium",
+        "groupName": null
+      },
+      {
+        "ingredient": "Sesame oil",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh ginger",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "grated",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 3,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 20,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cornstarch",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Vegetable oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Sesame seeds",
+        "quantity": 10,
+        "unit": "g",
+        "notes": "for garnish",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 490,
+      "protein": 42,
+      "carbs": 52,
+      "fat": 12
+    },
+    "macro_tags": {
+      "protein_source": "Chicken breast",
+      "carb_source": "Brown rice"
+    },
+    "created": "2025-05-05T12:00:00Z",
+    "activate_date": "2025-05-05"
+  },
+  {
+    "id": "m11",
+    "category": "main",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Black Bean Tacos",
+    "description": "Crispy corn tortillas filled with seasoned black beans, red cabbage slaw, avocado, and a lime-cilantro crema. Vibrant, filling, and entirely plant-based.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:15:00",
+    "cook_time": "00:10:00",
+    "cool_time": null,
+    "total_time": "00:25:00",
+    "servings": 4,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 159,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "Mexican",
+      "Quick",
+      "Healthy"
+    ],
+    "cuisines": [
+      "Mexican"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Drain and rinse black beans. In a pan over medium heat with olive oil, add beans, cumin, smoked paprika, garlic powder, salt and a splash of water. Cook 5 minutes, mashing slightly.\n2. Mix red cabbage, lime juice, and a pinch of salt for the slaw.\n3. Mash avocado with lime juice, garlic powder, and salt.\n4. Warm tortillas in a dry pan.\n5. Assemble tacos: layer beans, cabbage slaw, avocado mash, and garnish with fresh cilantro.",
+    "equipment": "Skillet\nBowls",
+    "notes": "Add sliced pickled jalapeños for heat. The beans can be made ahead and reheated.",
+    "ingredients": [
+      {
+        "ingredient": "Black beans",
+        "quantity": 480,
+        "unit": "g",
+        "notes": "canned, drained and rinsed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Corn tortillas",
+        "quantity": 8,
+        "unit": "small",
+        "notes": "about 15 g each",
+        "groupName": null
+      },
+      {
+        "ingredient": "Red cabbage",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "finely shredded",
+        "groupName": null
+      },
+      {
+        "ingredient": "Ripe avocado",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "about 2 small avocados",
+        "groupName": null
+      },
+      {
+        "ingredient": "Lime juice",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 4,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Smoked paprika",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic powder",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 15,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh cilantro",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "for serving",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 420,
+      "protein": 14,
+      "carbs": 58,
+      "fat": 16
+    },
+    "macro_tags": {
+      "protein_source": "Black beans",
+      "carb_source": "Corn tortillas"
+    },
+    "created": "2025-05-10T12:00:00Z",
+    "activate_date": "2025-05-10"
+  },
+  {
+    "id": "m12",
+    "category": "main",
+    "dietary": [],
+    "title": "Pesto Chicken with Roasted Potatoes",
+    "description": "Tender chicken breasts coated in basil pesto, baked alongside crispy roasted potatoes and cherry tomatoes. Simple, flavour-forward, and effortlessly elegant.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:30:00",
+    "cool_time": null,
+    "total_time": "00:40:00",
+    "servings": 2,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 172,
+    "tags": [
+      "High-Protein",
+      "Italian",
+      "Meal Prep",
+      "Easy"
+    ],
+    "cuisines": [
+      "Italian"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "1. Preheat oven to 200°C. Line a baking sheet with parchment paper.\n2. Toss potatoes with olive oil, salt and pepper. Spread on the baking sheet. Roast 15 minutes.\n3. Coat chicken breasts with pesto. Nestle among the potatoes along with cherry tomatoes.\n4. Return to oven and roast a further 20–25 minutes until chicken is cooked through and potatoes are golden and crisp.\n5. Rest 5 minutes before serving.",
+    "equipment": "Baking sheet\nParchment paper",
+    "notes": "Use shop-bought pesto to keep this recipe fast. Homemade pesto takes it to another level if you have the time.",
+    "ingredients": [
+      {
+        "ingredient": "Chicken breast",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "2 medium breasts",
+        "groupName": null
+      },
+      {
+        "ingredient": "Baby potatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Basil pesto",
+        "quantity": 60,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 150,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 20,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Black pepper",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 490,
+      "protein": 42,
+      "carbs": 36,
+      "fat": 18
+    },
+    "macro_tags": {
+      "protein_source": "Chicken breast",
+      "carb_source": "Baby potatoes"
+    },
+    "created": "2025-05-15T12:00:00Z",
+    "activate_date": "2025-05-15"
+  },
+  {
+    "id": "m13",
+    "category": "main",
+    "dietary": [],
+    "title": "Tuna Nicoise Salad",
+    "description": "A substantial French salad with canned tuna, hard-boiled eggs, green beans, olives, and potatoes in a Dijon vinaigrette. Protein-rich, no hot cooking required, and ready in 20 minutes.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:20:00",
+    "cook_time": "00:12:00",
+    "cool_time": null,
+    "total_time": "00:32:00",
+    "servings": 2,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.6,
+    "number_of_ratings": 128,
+    "tags": [
+      "High-Protein",
+      "French",
+      "Healthy",
+      "Quick"
+    ],
+    "cuisines": [
+      "French"
+    ],
+    "courses": [
+      "Lunch",
+      "Dinner",
+      "Main Course"
+    ],
+    "instructions": "1. Boil potatoes 12 minutes until tender. In the last 3 minutes add green beans. Drain and run under cold water.\n2. Boil eggs 8 minutes, transfer to ice water, peel and halve.\n3. For the dressing: whisk Dijon mustard, red wine vinegar, olive oil, garlic, salt and pepper.\n4. Arrange lettuce on a platter. Top with potatoes, green beans, tuna (drained, broken into chunks), hard-boiled egg halves, olives, and cherry tomatoes.\n5. Drizzle dressing over the top and serve.",
+    "equipment": "Two saucepans\nWhisk\nBowl",
+    "notes": "Tuna in olive oil gives the best flavour. Don't overdress — the salad should taste bright, not oily.",
+    "ingredients": [
+      {
+        "ingredient": "Canned tuna",
+        "quantity": 200,
+        "unit": "g",
+        "notes": "in olive oil, drained",
+        "groupName": null
+      },
+      {
+        "ingredient": "Eggs",
+        "quantity": 3,
+        "unit": "large",
+        "notes": "hard-boiled",
+        "groupName": null
+      },
+      {
+        "ingredient": "Baby potatoes",
+        "quantity": 250,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Green beans",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "trimmed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "halved",
+        "groupName": null
+      },
+      {
+        "ingredient": "Black olives",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "pitted",
+        "groupName": null
+      },
+      {
+        "ingredient": "Romaine lettuce",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "torn",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dijon mustard",
+        "quantity": 15,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Red wine vinegar",
+        "quantity": 20,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Olive oil",
+        "quantity": 40,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 1,
+        "unit": "clove",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 450,
+      "protein": 36,
+      "carbs": 24,
+      "fat": 24
+    },
+    "macro_tags": {
+      "protein_source": "Canned tuna",
+      "carb_source": "Baby potatoes"
+    },
+    "created": "2025-05-20T12:00:00Z",
+    "activate_date": "2025-05-20"
+  },
+  {
+    "id": "m14",
+    "category": "main",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Chickpea & Sweet Potato Curry",
+    "description": "A thick, warming curry with tender chickpeas and sweet potato cubes in a spiced coconut sauce. Completely vegan, excellent for meal prep, and better the next day.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:30:00",
+    "cool_time": null,
+    "total_time": "00:40:00",
     "servings": 4,
     "difficulty": "Easy",
     "author": "Meal Prep Codex",
     "source": "Original",
     "video_url": null,
     "rating": 4.8,
-    "number_of_ratings": 173,
-    "tags": ["French", "Breakfast", "Sweet", "Vegetarian", "Quick"],
-    "cuisines": ["French"],
-    "courses": ["Breakfast", "Dessert", "Snack"],
-    "instructions": "GroupName : Make the batter\n1. In a blender, combine flour, eggs, milk, water, melted butter, sugar, vanilla extract, and salt.\n2. Blend on high for 30 seconds until completely smooth.\n3. Rest batter in the refrigerator for at least 30 minutes (or overnight). This relaxes the gluten.\nGroupName : Cook the crêpes\n4. Heat a 20-22cm non-stick pan over medium-high heat. Lightly brush with butter.\n5. Pour 3-4 tablespoons of batter into the pan, immediately swirling to coat the pan in a thin layer.\n6. Cook for 60-90 seconds until the edges start to lift and the surface looks set.\n7. Flip and cook the other side for 30 seconds until lightly golden.\n8. Slide onto a plate. Repeat with remaining batter, stacking crêpes between parchment paper.\n9. Serve with lemon juice and icing sugar, or your favourite fillings.",
-    "equipment": "Blender or mixing bowl\n20-22cm non-stick crêpe pan\nHeat-resistant pastry brush\nSpatula",
-    "notes": "Resting the batter is key — don't skip it.\nThe first crêpe is always a test crêpe — adjust heat and batter amount as needed.\nCrepe batter keeps in the fridge for 2 days.",
-    "ingredients": [
-      { "ingredient": "All-purpose flour", "quantity": 1, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Eggs", "quantity": 2, "unit": "large", "notes": null, "groupName": null },
-      { "ingredient": "Whole milk", "quantity": 0.75, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Water", "quantity": 0.5, "unit": "cup", "notes": null, "groupName": null },
-      { "ingredient": "Unsalted butter", "quantity": 2, "unit": "tbsp", "notes": "melted, plus extra for cooking", "groupName": null },
-      { "ingredient": "Granulated sugar", "quantity": 1, "unit": "tbsp", "notes": null, "groupName": null },
-      { "ingredient": "Vanilla extract", "quantity": 0.5, "unit": "tsp", "notes": null, "groupName": null },
-      { "ingredient": "Salt", "quantity": 1, "unit": "pinch", "notes": null, "groupName": null }
+    "number_of_ratings": 203,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "Meal Prep",
+      "One-Pot",
+      "Healthy"
     ],
-    "nutrition": {
-      "calories": 195, "carbohydrates": 28, "protein": 7, "fat": 6,
-      "saturated_fat": 3.5, "trans_fat": 0, "fiber": 0.8, "sugar": 4,
-      "sodium": 110, "cholesterol": 105, "potassium": 145,
-      "vitamin_a": 280, "vitamin_c": 0, "calcium": 95, "iron": 1.5
+    "cuisines": [
+      "Indian"
+    ],
+    "courses": [
+      "Dinner",
+      "Lunch",
+      "Main Course"
+    ],
+    "instructions": "1. Heat coconut oil in a large pot over medium heat. Add onion and cook 8 minutes until golden.\n2. Add garlic, ginger, curry powder, cumin, turmeric, and chilli flakes. Cook 1 minute.\n3. Add sweet potato and chickpeas. Stir to coat in spices.\n4. Pour in coconut milk and diced tomatoes. Season with salt.\n5. Simmer 20–25 minutes until sweet potato is tender.\n6. Squeeze in lemon juice. Taste and adjust seasoning.\n7. Serve with basmati rice or naan, topped with fresh cilantro.",
+    "equipment": "Large pot or Dutch oven\nWooden spoon",
+    "notes": "Add a handful of baby spinach in the last 2 minutes for extra greens. This curry freezes well for up to 3 months.",
+    "ingredients": [
+      {
+        "ingredient": "Chickpeas",
+        "quantity": 480,
+        "unit": "g",
+        "notes": "canned, drained and rinsed",
+        "groupName": null
+      },
+      {
+        "ingredient": "Sweet potato",
+        "quantity": 500,
+        "unit": "g",
+        "notes": "peeled, cut into 2 cm cubes",
+        "groupName": null
+      },
+      {
+        "ingredient": "Coconut milk",
+        "quantity": 400,
+        "unit": "ml",
+        "notes": "full-fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Diced tomatoes",
+        "quantity": 400,
+        "unit": "g",
+        "notes": "canned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Yellow onion",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "diced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Garlic cloves",
+        "quantity": 4,
+        "unit": "cloves",
+        "notes": "minced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Fresh ginger",
+        "quantity": 15,
+        "unit": "g",
+        "notes": "grated",
+        "groupName": null
+      },
+      {
+        "ingredient": "Curry powder",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground cumin",
+        "quantity": 4,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Ground turmeric",
+        "quantity": 3,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried chilli flakes",
+        "quantity": 2,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Coconut oil",
+        "quantity": 30,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Lemon juice",
+        "quantity": 20,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 5,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Basmati rice",
+        "quantity": 300,
+        "unit": "g",
+        "notes": "dry, for serving",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 460,
+      "protein": 14,
+      "carbs": 64,
+      "fat": 18
     },
-    "created": "2025-04-15T08:30:00Z",
-    "activate_date": "2025-04-15"
+    "macro_tags": {
+      "protein_source": "Chickpeas",
+      "carb_source": "Sweet potato"
+    },
+    "created": "2025-05-25T12:00:00Z",
+    "activate_date": "2025-05-25"
+  },
+  {
+    "id": "s1",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Apple with Almond Butter",
+    "description": "Crisp apple slices alongside a generous portion of natural almond butter. A perfectly balanced snack with natural sugars and healthy fats to keep energy levels stable.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:02:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:02:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.6,
+    "number_of_ratings": 89,
+    "tags": [
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Slice the apple into wedges.\n2. Serve with almond butter for dipping.",
+    "equipment": "Knife\nCutting board",
+    "notes": "Use natural almond butter with no added sugar or oil. Peanut butter works equally well.",
+    "ingredients": [
+      {
+        "ingredient": "Apple",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "about 1 medium apple, sliced",
+        "groupName": null
+      },
+      {
+        "ingredient": "Almond butter",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "natural, no added sugar",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 220,
+      "protein": 5,
+      "carbs": 26,
+      "fat": 12
+    },
+    "macro_tags": {
+      "protein_source": "Almond butter",
+      "carb_source": "Apple"
+    },
+    "created": "2025-06-01T08:00:00Z",
+    "activate_date": "2025-06-01"
+  },
+  {
+    "id": "s2",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Cottage Cheese & Cucumber Bites",
+    "description": "Thick slices of cucumber topped with cottage cheese and a sprinkle of paprika. Refreshing, high-protein, and zero cooking.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.4,
+    "number_of_ratings": 67,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Snack"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Slice cucumber into thick rounds.\n2. Spoon cottage cheese onto each slice. Dust with paprika and season lightly with salt.",
+    "equipment": "Knife\nCutting board",
+    "notes": "Add a crack of black pepper or fresh dill for more flavour.",
+    "ingredients": [
+      {
+        "ingredient": "Cucumber",
+        "quantity": 150,
+        "unit": "g",
+        "notes": "sliced into thick rounds",
+        "groupName": null
+      },
+      {
+        "ingredient": "Cottage cheese",
+        "quantity": 100,
+        "unit": "g",
+        "notes": "full-fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Smoked paprika",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 130,
+      "protein": 14,
+      "carbs": 6,
+      "fat": 4
+    },
+    "macro_tags": {
+      "protein_source": "Cottage cheese",
+      "carb_source": "Cucumber"
+    },
+    "created": "2025-06-03T08:00:00Z",
+    "activate_date": "2025-06-03"
+  },
+  {
+    "id": "s3",
+    "category": "snack",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Hummus with Vegetable Crudités",
+    "description": "Creamy hummus served with an assortment of raw vegetables — carrots, celery, and bell pepper — for dipping. A classic high-fibre, plant-based snack.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 145,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "Middle Eastern"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Cut carrots, celery, and bell pepper into sticks.\n2. Serve with hummus for dipping.",
+    "equipment": "Knife\nCutting board",
+    "notes": "Use good-quality hummus. Make your own from chickpeas, tahini, lemon, and garlic for even better results.",
+    "ingredients": [
+      {
+        "ingredient": "Hummus",
+        "quantity": 80,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Carrots",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "cut into sticks",
+        "groupName": null
+      },
+      {
+        "ingredient": "Celery",
+        "quantity": 40,
+        "unit": "g",
+        "notes": "cut into sticks",
+        "groupName": null
+      },
+      {
+        "ingredient": "Bell pepper",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "cut into strips",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 190,
+      "protein": 6,
+      "carbs": 20,
+      "fat": 10
+    },
+    "macro_tags": {
+      "protein_source": "Hummus",
+      "carb_source": "Carrots"
+    },
+    "created": "2025-06-05T08:00:00Z",
+    "activate_date": "2025-06-05"
+  },
+  {
+    "id": "s4",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Hard-Boiled Eggs with Cherry Tomatoes",
+    "description": "A simple, protein-packed snack of hard-boiled eggs alongside sweet cherry tomatoes. One of the most effective snacks for keeping hunger at bay.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:02:00",
+    "cook_time": "00:10:00",
+    "cool_time": null,
+    "total_time": "00:12:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.5,
+    "number_of_ratings": 112,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "Healthy",
+      "Snack",
+      "Meal Prep"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Place eggs in a saucepan. Cover with cold water by 3 cm. Bring to a boil, then reduce heat and simmer 8–10 minutes.\n2. Transfer immediately to ice water for 5 minutes. Peel and halve.\n3. Serve with cherry tomatoes and a pinch of salt.",
+    "equipment": "Saucepan\nBowl with ice water",
+    "notes": "Boil a batch at the start of the week and keep them unpeeled in the fridge for up to 5 days.",
+    "ingredients": [
+      {
+        "ingredient": "Eggs",
+        "quantity": 2,
+        "unit": "large",
+        "notes": "hard-boiled",
+        "groupName": null
+      },
+      {
+        "ingredient": "Cherry tomatoes",
+        "quantity": 100,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 175,
+      "protein": 14,
+      "carbs": 6,
+      "fat": 11
+    },
+    "macro_tags": {
+      "protein_source": "Eggs",
+      "carb_source": "Cherry tomatoes"
+    },
+    "created": "2025-06-08T08:00:00Z",
+    "activate_date": "2025-06-08"
+  },
+  {
+    "id": "s5",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Homemade Granola Bars",
+    "description": "Chewy, dense granola bars made with oats, honey, almond butter, and dark chocolate chips. No baking needed — press together and refrigerate. Great for on-the-go.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:10:00",
+    "cook_time": "00:00:00",
+    "cool_time": "01:00:00",
+    "total_time": "01:10:00",
+    "servings": 8,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.8,
+    "number_of_ratings": 193,
+    "tags": [
+      "Vegetarian",
+      "Meal Prep",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. In a large bowl, combine oats, almond butter, honey, and vanilla extract. Mix until well combined.\n2. Fold in dark chocolate chips and crushed almonds.\n3. Line a 20×20 cm baking tin with parchment paper. Press the mixture firmly and evenly into the tin.\n4. Refrigerate for at least 1 hour until firm.\n5. Slice into 8 bars. Store wrapped in the fridge for up to 1 week.",
+    "equipment": "Large bowl\n20×20 cm baking tin\nParchment paper",
+    "notes": "Press the mixture very firmly into the tin — this is what makes the bars hold together without baking.",
+    "ingredients": [
+      {
+        "ingredient": "Rolled oats",
+        "quantity": 240,
+        "unit": "g",
+        "notes": "old-fashioned",
+        "groupName": null
+      },
+      {
+        "ingredient": "Almond butter",
+        "quantity": 120,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 80,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Vanilla extract",
+        "quantity": 5,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Dark chocolate chips",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "70% cocoa",
+        "groupName": null
+      },
+      {
+        "ingredient": "Raw almonds",
+        "quantity": 60,
+        "unit": "g",
+        "notes": "roughly crushed",
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 260,
+      "protein": 7,
+      "carbs": 34,
+      "fat": 12
+    },
+    "macro_tags": {
+      "protein_source": "Almond butter",
+      "carb_source": "Rolled oats"
+    },
+    "created": "2025-06-10T08:00:00Z",
+    "activate_date": "2025-06-10"
+  },
+  {
+    "id": "s6",
+    "category": "snack",
+    "dietary": [
+      "vegan",
+      "vegetarian"
+    ],
+    "title": "Mixed Nuts & Dried Fruit",
+    "description": "A handful of mixed nuts with a small portion of dried apricots. The simplest, most reliable snack for steady energy between meals.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:01:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:01:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.5,
+    "number_of_ratings": 78,
+    "tags": [
+      "Vegan",
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "Mediterranean"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Weigh out nuts and dried apricots. Combine in a small bowl or bag.\n2. Eat as is.",
+    "equipment": "Kitchen scale",
+    "notes": "Portion control matters — weigh your nuts rather than guessing, as they are very calorie-dense.",
+    "ingredients": [
+      {
+        "ingredient": "Mixed nuts",
+        "quantity": 30,
+        "unit": "g",
+        "notes": "unsalted (almonds, cashews, walnuts)",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried apricots",
+        "quantity": 30,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 205,
+      "protein": 5,
+      "carbs": 18,
+      "fat": 13
+    },
+    "macro_tags": {
+      "protein_source": "Mixed nuts",
+      "carb_source": "Dried apricots"
+    },
+    "created": "2025-06-12T08:00:00Z",
+    "activate_date": "2025-06-12"
+  },
+  {
+    "id": "s7",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Protein Smoothie",
+    "description": "A thick, creamy smoothie with banana, Greek yogurt, and oat milk. Naturally sweet, genuinely filling, and can be prepared in under 3 minutes.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:03:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:03:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.7,
+    "number_of_ratings": 201,
+    "tags": [
+      "High-Protein",
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Add all ingredients to a blender.\n2. Blend on high for 45 seconds until completely smooth.\n3. Serve immediately.",
+    "equipment": "Blender",
+    "notes": "Use a frozen banana for a thicker, colder smoothie. Add a tablespoon of almond butter for extra protein and healthy fats.",
+    "ingredients": [
+      {
+        "ingredient": "Banana",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "frozen preferred",
+        "groupName": null
+      },
+      {
+        "ingredient": "Plain Greek yogurt",
+        "quantity": 120,
+        "unit": "g",
+        "notes": "full-fat",
+        "groupName": null
+      },
+      {
+        "ingredient": "Oat milk",
+        "quantity": 150,
+        "unit": "ml",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Honey",
+        "quantity": 10,
+        "unit": "g",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 240,
+      "protein": 11,
+      "carbs": 42,
+      "fat": 4
+    },
+    "macro_tags": {
+      "protein_source": "Plain Greek yogurt",
+      "carb_source": "Banana"
+    },
+    "created": "2025-06-15T08:00:00Z",
+    "activate_date": "2025-06-15"
+  },
+  {
+    "id": "s8",
+    "category": "snack",
+    "dietary": [
+      "vegetarian"
+    ],
+    "title": "Rice Cakes with Avocado",
+    "description": "Light rice cakes spread with mashed avocado, lemon juice, and a pinch of chilli flakes. Low-calorie crunch with healthy fats — ideal as a light snack slot.",
+    "image": null,
+    "image_card": null,
+    "prep_time": "00:05:00",
+    "cook_time": "00:00:00",
+    "cool_time": null,
+    "total_time": "00:05:00",
+    "servings": 1,
+    "difficulty": "Easy",
+    "author": "Meal Prep Codex",
+    "source": "Original",
+    "video_url": null,
+    "rating": 4.4,
+    "number_of_ratings": 91,
+    "tags": [
+      "Vegetarian",
+      "No-Cook",
+      "Quick",
+      "Healthy",
+      "Snack"
+    ],
+    "cuisines": [
+      "American"
+    ],
+    "courses": [
+      "Snack"
+    ],
+    "instructions": "1. Mash avocado with lemon juice and a pinch of salt until smooth.\n2. Spread on rice cakes. Dust with chilli flakes.",
+    "equipment": "Fork",
+    "notes": "Use ripe avocado. Eat immediately after assembling to prevent browning.",
+    "ingredients": [
+      {
+        "ingredient": "Rice cakes",
+        "quantity": 3,
+        "unit": "pieces",
+        "notes": "about 30 g total",
+        "groupName": null
+      },
+      {
+        "ingredient": "Ripe avocado",
+        "quantity": 80,
+        "unit": "g",
+        "notes": "about half a small avocado",
+        "groupName": null
+      },
+      {
+        "ingredient": "Lemon juice",
+        "quantity": 5,
+        "unit": "ml",
+        "notes": "fresh",
+        "groupName": null
+      },
+      {
+        "ingredient": "Dried chilli flakes",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      },
+      {
+        "ingredient": "Salt",
+        "quantity": 1,
+        "unit": "pinch",
+        "notes": null,
+        "groupName": null
+      }
+    ],
+    "nutrition_per_serving": {
+      "calories": 185,
+      "protein": 3,
+      "carbs": 20,
+      "fat": 11
+    },
+    "macro_tags": {
+      "protein_source": "Ripe avocado",
+      "carb_source": "Rice cakes"
+    },
+    "created": "2025-06-18T08:00:00Z",
+    "activate_date": "2025-06-18"
   }
 ]

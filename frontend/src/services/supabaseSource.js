@@ -34,3 +34,11 @@ export async function getMetadata() {
 export async function getRandomRecipes(count = 21) {
   throw new Error('[supabaseSource] Not yet implemented.');
 }
+
+export async function getAllRecipes() {
+  throw new Error('[supabaseSource] Not yet implemented. Set VITE_DATA_SOURCE=local to use local data.');
+}
+
+export async function getRecipesByCategory(category, dietary = 'none') {
+  throw new Error('[supabaseSource] Not yet implemented. Set VITE_DATA_SOURCE=local to use local data.');
+}

@@ -57,6 +57,32 @@ export async function getRecipes({ cuisine, course, tag, ingredient, search, pag
   return { recipes: paginated, total, totalPages, currentPage: page };
 }
 
+export async function getAllRecipes() {
+  return [...recipesData];
+}
+
+
+/**
+ * Get recipes filtered by PrepWeek category and dietary preference.
+ * @param {string} category  - 'breakfast' | 'main' | 'snack'
+ * @param {string} dietary   - 'none' | 'vegetarian' | 'vegan'
+ */
+export async function getRecipesByCategory(category, dietary = 'none') {
+  let results = [...recipesData];
+
+  if (category) {
+    results = results.filter(r => r.category === category);
+  }
+
+  if (dietary === 'vegan') {
+    results = results.filter(r => r.dietary?.includes('vegan'));
+  } else if (dietary === 'vegetarian') {
+    results = results.filter(r => r.dietary?.includes('vegetarian') || r.dietary?.includes('vegan'));
+  }
+
+  return results;
+}
+
 export async function getRecipeById(id) {
   const recipe = recipesData.find(r => String(r.id) === String(id));
   return recipe || null;

@@ -8,11 +8,15 @@ import Home from './pages/Home';
 import RecipeList from './pages/RecipeList';
 import RecipeDetail from './pages/RecipeDetail';
 import Search from './pages/Search';
-import PreepWeek from './pages/PreepWeek';
+import PrepWeek from './pages/PrepWeek';
+import Profile from './pages/Profile';
 import Favorites from './pages/Favorites';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import FAQ from './pages/FAQ';
+
+import { PrepWeekProvider } from './context/PrepWeekContext';
+import { getAllRecipes } from './services/recipeRepository';
 
 const router = createBrowserRouter([
   {
@@ -23,7 +27,8 @@ const router = createBrowserRouter([
       { path: 'recipes', element: <RecipeList /> },
       { path: 'recipes/:id', element: <RecipeDetail /> },
       { path: 'search', element: <Search /> },
-      { path: 'preepweek', element: <PreepWeek /> },
+      { path: 'prepweek', element: <PrepWeek /> },
+      { path: 'profile', element: <Profile /> },
       { path: 'favorites', element: <Favorites /> },
       { path: 'about', element: <About /> },
       { path: 'contact', element: <Contact /> },
@@ -34,9 +39,19 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const [recipes, setRecipes] = React.useState([]);
+
+  React.useEffect(() => {
+    // In a real app, you might only load recipes when entering the planner,
+    // but doing it once globally is fine for our setup.
+    getAllRecipes().then(setRecipes).catch(console.error);
+  }, []);
+
   return (
     <FavoritesProvider>
-      <RouterProvider router={router} />
+      <PrepWeekProvider recipes={recipes}>
+        <RouterProvider router={router} />
+      </PrepWeekProvider>
     </FavoritesProvider>
   );
 }

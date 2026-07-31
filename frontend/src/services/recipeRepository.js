@@ -13,4 +13,6 @@ export const {
   getLatestRecipes,
   getMetadata,
   getRandomRecipes,
+  getAllRecipes,
+  getRecipesByCategory,
 } = dataSource;
