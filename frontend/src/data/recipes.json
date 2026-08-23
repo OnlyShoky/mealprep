@@ -1153,8 +1153,8 @@
     "dietary": [],
     "title": "Hearty Beef Stew",
     "description": "A soul-warming beef stew with melt-in-your-mouth chunks of braised beef, tender vegetables, and a deep, glossy wine-enriched broth.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m3.jpg",
+    "image_card": "/images/recipe-m3.jpg",
     "prep_time": "00:20:00",
     "cook_time": "02:30:00",
     "cool_time": null,
@@ -1291,173 +1291,13 @@
     "activate_date": "2025-03-01"
   },
   {
-    "id": "m4",
-    "category": "main",
-    "dietary": [
-      "vegan",
-      "vegetarian"
-    ],
-    "title": "Crispy Falafel Bowl",
-    "description": "Light, herby, and irresistibly crispy falafel served over brown rice with tahini sauce, cucumber, and cherry tomatoes. A complete, protein-rich vegan meal.",
-    "image": null,
-    "image_card": null,
-    "prep_time": "00:20:00",
-    "cook_time": "00:25:00",
-    "cool_time": null,
-    "total_time": "00:45:00",
-    "servings": 4,
-    "difficulty": "Medium",
-    "author": "Meal Prep Codex",
-    "source": "Original",
-    "video_url": null,
-    "rating": 4.7,
-    "number_of_ratings": 142,
-    "tags": [
-      "Vegan",
-      "Vegetarian",
-      "Middle Eastern",
-      "Healthy",
-      "Meal Prep"
-    ],
-    "cuisines": [
-      "Middle Eastern"
-    ],
-    "courses": [
-      "Lunch",
-      "Dinner",
-      "Main Course"
-    ],
-    "instructions": "GroupName : Make the falafel mixture\n1. Drain soaked chickpeas (do NOT use canned — they must be dried soaked chickpeas).\n2. Place chickpeas, onion, garlic, parsley, cilantro, cumin, coriander, and salt in a food processor.\n3. Pulse until finely ground but not a paste. Refrigerate 30 minutes.\nGroupName : Shape and cook\n4. Add baking powder and flour to the mixture. Stir to combine.\n5. Shape into small patties (about 30 g each). Heat oil in a skillet to 175°C.\n6. Fry in batches for 3–4 minutes until deep golden. Drain on paper towels.\nGroupName : Assemble the bowls\n7. Cook brown rice according to package directions.\n8. Divide rice among 4 bowls. Top with falafel, cucumber, cherry tomatoes, and a generous drizzle of tahini.",
-    "equipment": "Food processor\nDeep skillet\nSaucepan",
-    "notes": "You must use dried chickpeas soaked overnight, not canned. The mixture can be refrigerated for up to 24 hours before frying.",
-    "ingredients": [
-      {
-        "ingredient": "Dried chickpeas",
-        "quantity": 250,
-        "unit": "g",
-        "notes": "soaked overnight in cold water",
-        "groupName": null
-      },
-      {
-        "ingredient": "Yellow onion",
-        "quantity": 60,
-        "unit": "g",
-        "notes": "roughly chopped",
-        "groupName": null
-      },
-      {
-        "ingredient": "Garlic cloves",
-        "quantity": 4,
-        "unit": "cloves",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Fresh parsley",
-        "quantity": 30,
-        "unit": "g",
-        "notes": "packed",
-        "groupName": null
-      },
-      {
-        "ingredient": "Fresh cilantro",
-        "quantity": 15,
-        "unit": "g",
-        "notes": "packed",
-        "groupName": null
-      },
-      {
-        "ingredient": "Ground cumin",
-        "quantity": 5,
-        "unit": "g",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Ground coriander",
-        "quantity": 3,
-        "unit": "g",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Salt",
-        "quantity": 5,
-        "unit": "g",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Baking powder",
-        "quantity": 3,
-        "unit": "g",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "All-purpose flour",
-        "quantity": 20,
-        "unit": "g",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Vegetable oil",
-        "quantity": 120,
-        "unit": "ml",
-        "notes": "for frying",
-        "groupName": null
-      },
-      {
-        "ingredient": "Brown rice",
-        "quantity": 300,
-        "unit": "g",
-        "notes": "dry weight, for serving",
-        "groupName": null
-      },
-      {
-        "ingredient": "Cucumber",
-        "quantity": 150,
-        "unit": "g",
-        "notes": "diced",
-        "groupName": null
-      },
-      {
-        "ingredient": "Cherry tomatoes",
-        "quantity": 150,
-        "unit": "g",
-        "notes": "halved",
-        "groupName": null
-      },
-      {
-        "ingredient": "Tahini",
-        "quantity": 60,
-        "unit": "g",
-        "notes": "for drizzling",
-        "groupName": null
-      }
-    ],
-    "nutrition_per_serving": {
-      "calories": 480,
-      "protein": 16,
-      "carbs": 62,
-      "fat": 20
-    },
-    "macro_tags": {
-      "protein_source": "Dried chickpeas",
-      "carb_source": "Brown rice"
-    },
-    "created": "2025-04-01T11:00:00Z",
-    "activate_date": "2025-04-01"
-  },
-  {
     "id": "m5",
     "category": "main",
     "dietary": [],
     "title": "Baked Salmon with Roasted Vegetables",
     "description": "Oven-baked salmon fillets with a honey-mustard glaze alongside roasted broccoli and sweet potato. Clean, protein-packed, and on the table in 30 minutes.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m5.jpg",
+    "image_card": "/images/recipe-m5.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:25:00",
     "cool_time": null,
@@ -1570,8 +1410,8 @@
     "dietary": [],
     "title": "Grilled Chicken & Quinoa Bowl",
     "description": "Marinated, grilled chicken breast over fluffy quinoa with baby spinach, roasted cherry tomatoes, and a lemon-tahini dressing. Clean, balanced, and meal-prep-friendly.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m6.jpg",
+    "image_card": "/images/recipe-m6.jpg",
     "prep_time": "00:15:00",
     "cook_time": "00:25:00",
     "cool_time": null,
@@ -1700,8 +1540,8 @@
     ],
     "title": "Shakshuka",
     "description": "Eggs poached directly in a spiced, fragrant tomato and pepper sauce. A Middle Eastern classic that comes together in one pan and is perfect any time of day.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m7.jpg",
+    "image_card": "/images/recipe-m7.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:25:00",
     "cool_time": null,
@@ -1842,8 +1682,8 @@
     "dietary": [],
     "title": "Turkey Meatballs with Marinara",
     "description": "Juicy oven-baked turkey meatballs simmered in a classic tomato marinara, served over whole wheat spaghetti. High-protein, lower in fat than beef meatballs, and great for meal prep.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m8.jpg",
+    "image_card": "/images/recipe-m8.jpg",
     "prep_time": "00:20:00",
     "cook_time": "00:30:00",
     "cool_time": null,
@@ -1972,8 +1812,8 @@
     ],
     "title": "Lentil & Vegetable Soup",
     "description": "A hearty, warming red lentil soup packed with tomatoes, carrots, and cumin. Thick, filling, and completely plant-based — exceptional value for a vegan high-protein meal.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m9.jpg",
+    "image_card": "/images/recipe-m9.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:35:00",
     "cool_time": null,
@@ -2108,8 +1948,8 @@
     "dietary": [],
     "title": "Chicken & Brown Rice Stir-Fry",
     "description": "Tender chicken strips wok-fried with broccoli, carrots, and snap peas in a savoury soy-ginger sauce, served over brown rice. Fast, clean, and high-protein.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m10.jpg",
+    "image_card": "/images/recipe-m10.jpg",
     "prep_time": "00:15:00",
     "cook_time": "00:20:00",
     "cool_time": null,
@@ -2254,8 +2094,8 @@
     ],
     "title": "Black Bean Tacos",
     "description": "Crispy corn tortillas filled with seasoned black beans, red cabbage slaw, avocado, and a lime-cilantro crema. Vibrant, filling, and entirely plant-based.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m11.jpg",
+    "image_card": "/images/recipe-m11.jpg",
     "prep_time": "00:15:00",
     "cook_time": "00:10:00",
     "cool_time": null,
@@ -2383,8 +2223,8 @@
     "dietary": [],
     "title": "Pesto Chicken with Roasted Potatoes",
     "description": "Tender chicken breasts coated in basil pesto, baked alongside crispy roasted potatoes and cherry tomatoes. Simple, flavour-forward, and effortlessly elegant.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m12.jpg",
+    "image_card": "/images/recipe-m12.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:30:00",
     "cool_time": null,
@@ -2483,8 +2323,8 @@
     "dietary": [],
     "title": "Tuna Nicoise Salad",
     "description": "A substantial French salad with canned tuna, hard-boiled eggs, green beans, olives, and potatoes in a Dijon vinaigrette. Protein-rich, no hot cooking required, and ready in 20 minutes.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m13.jpg",
+    "image_card": "/images/recipe-m13.jpg",
     "prep_time": "00:20:00",
     "cook_time": "00:12:00",
     "cool_time": null,
@@ -2621,8 +2461,8 @@
     ],
     "title": "Chickpea & Sweet Potato Curry",
     "description": "A thick, warming curry with tender chickpeas and sweet potato cubes in a spiced coconut sauce. Completely vegan, excellent for meal prep, and better the next day.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-m14.jpg",
+    "image_card": "/images/recipe-m14.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:30:00",
     "cool_time": null,
@@ -2780,8 +2620,8 @@
     ],
     "title": "Apple with Almond Butter",
     "description": "Crisp apple slices alongside a generous portion of natural almond butter. A perfectly balanced snack with natural sugars and healthy fats to keep energy levels stable.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s1.jpg",
+    "image_card": "/images/recipe-s1.jpg",
     "prep_time": "00:02:00",
     "cook_time": "00:00:00",
     "cool_time": null,
@@ -2839,86 +2679,6 @@
     "activate_date": "2025-06-01"
   },
   {
-    "id": "s2",
-    "category": "snack",
-    "dietary": [
-      "vegetarian"
-    ],
-    "title": "Cottage Cheese & Cucumber Bites",
-    "description": "Thick slices of cucumber topped with cottage cheese and a sprinkle of paprika. Refreshing, high-protein, and zero cooking.",
-    "image": null,
-    "image_card": null,
-    "prep_time": "00:05:00",
-    "cook_time": "00:00:00",
-    "cool_time": null,
-    "total_time": "00:05:00",
-    "servings": 1,
-    "difficulty": "Easy",
-    "author": "Meal Prep Codex",
-    "source": "Original",
-    "video_url": null,
-    "rating": 4.4,
-    "number_of_ratings": 67,
-    "tags": [
-      "High-Protein",
-      "Vegetarian",
-      "No-Cook",
-      "Quick",
-      "Snack"
-    ],
-    "cuisines": [
-      "American"
-    ],
-    "courses": [
-      "Snack"
-    ],
-    "instructions": "1. Slice cucumber into thick rounds.\n2. Spoon cottage cheese onto each slice. Dust with paprika and season lightly with salt.",
-    "equipment": "Knife\nCutting board",
-    "notes": "Add a crack of black pepper or fresh dill for more flavour.",
-    "ingredients": [
-      {
-        "ingredient": "Cucumber",
-        "quantity": 150,
-        "unit": "g",
-        "notes": "sliced into thick rounds",
-        "groupName": null
-      },
-      {
-        "ingredient": "Cottage cheese",
-        "quantity": 100,
-        "unit": "g",
-        "notes": "full-fat",
-        "groupName": null
-      },
-      {
-        "ingredient": "Smoked paprika",
-        "quantity": 1,
-        "unit": "pinch",
-        "notes": null,
-        "groupName": null
-      },
-      {
-        "ingredient": "Salt",
-        "quantity": 1,
-        "unit": "pinch",
-        "notes": null,
-        "groupName": null
-      }
-    ],
-    "nutrition_per_serving": {
-      "calories": 130,
-      "protein": 14,
-      "carbs": 6,
-      "fat": 4
-    },
-    "macro_tags": {
-      "protein_source": "Cottage cheese",
-      "carb_source": "Cucumber"
-    },
-    "created": "2025-06-03T08:00:00Z",
-    "activate_date": "2025-06-03"
-  },
-  {
     "id": "s3",
     "category": "snack",
     "dietary": [
@@ -2927,8 +2687,8 @@
     ],
     "title": "Hummus with Vegetable Crudités",
     "description": "Creamy hummus served with an assortment of raw vegetables — carrots, celery, and bell pepper — for dipping. A classic high-fibre, plant-based snack.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s3.jpg",
+    "image_card": "/images/recipe-s3.jpg",
     "prep_time": "00:05:00",
     "cook_time": "00:00:00",
     "cool_time": null,
@@ -3008,8 +2768,8 @@
     ],
     "title": "Hard-Boiled Eggs with Cherry Tomatoes",
     "description": "A simple, protein-packed snack of hard-boiled eggs alongside sweet cherry tomatoes. One of the most effective snacks for keeping hunger at bay.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s4.jpg",
+    "image_card": "/images/recipe-s4.jpg",
     "prep_time": "00:02:00",
     "cook_time": "00:10:00",
     "cool_time": null,
@@ -3081,8 +2841,8 @@
     ],
     "title": "Homemade Granola Bars",
     "description": "Chewy, dense granola bars made with oats, honey, almond butter, and dark chocolate chips. No baking needed — press together and refrigerate. Great for on-the-go.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s5.jpg",
+    "image_card": "/images/recipe-s5.jpg",
     "prep_time": "00:10:00",
     "cook_time": "00:00:00",
     "cool_time": "01:00:00",
@@ -3175,8 +2935,8 @@
     ],
     "title": "Mixed Nuts & Dried Fruit",
     "description": "A handful of mixed nuts with a small portion of dried apricots. The simplest, most reliable snack for steady energy between meals.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s6.jpg",
+    "image_card": "/images/recipe-s6.jpg",
     "prep_time": "00:01:00",
     "cook_time": "00:00:00",
     "cool_time": null,
@@ -3242,8 +3002,8 @@
     ],
     "title": "Protein Smoothie",
     "description": "A thick, creamy smoothie with banana, Greek yogurt, and oat milk. Naturally sweet, genuinely filling, and can be prepared in under 3 minutes.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s7.jpg",
+    "image_card": "/images/recipe-s7.jpg",
     "prep_time": "00:03:00",
     "cook_time": "00:00:00",
     "cool_time": null,
@@ -3323,8 +3083,8 @@
     ],
     "title": "Rice Cakes with Avocado",
     "description": "Light rice cakes spread with mashed avocado, lemon juice, and a pinch of chilli flakes. Low-calorie crunch with healthy fats — ideal as a light snack slot.",
-    "image": null,
-    "image_card": null,
+    "image": "/images/recipe-s8.jpg",
+    "image_card": "/images/recipe-s8.jpg",
     "prep_time": "00:05:00",
     "cook_time": "00:00:00",
     "cool_time": null,
