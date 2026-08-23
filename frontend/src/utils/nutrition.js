@@ -56,6 +56,34 @@ export function computeDailyTargets(profile) {
   return { calories, protein, carbs, fat, tdee };
 }
 
+// ─── Compute deficit and estimated weekly weight change (kg/week) ───────────
+/**
+ * 1 kg of body fat contains ~7,700 kcal.
+ * Returns daily/weekly target deficit, actual plan deficit, and estimated kg change per week.
+ */
+export function computeDeficitAndWeightLoss(tdee, targetDailyCalories, weeklyActualCalories = 0) {
+  if (!tdee || !targetDailyCalories) return null;
+
+  const dailyTargetDeficit = tdee - targetDailyCalories;
+  const weeklyTargetDeficit = dailyTargetDeficit * 7;
+  const targetKgChange = weeklyTargetDeficit / 7700; // >0: loss, <0: gain
+
+  const weeklyMaintenance = tdee * 7;
+  const weeklyActualDeficit = weeklyMaintenance - weeklyActualCalories;
+  const actualKgChange = weeklyActualDeficit / 7700;
+
+  return {
+    dailyMaintenance: tdee,
+    weeklyMaintenance,
+    dailyTargetDeficit,
+    weeklyTargetDeficit,
+    targetKgChange,
+    weeklyActualDeficit,
+    actualKgChange,
+  };
+}
+
+
 // ─── Compute per-slot targets ────────────────────────────────────────────────
 export function computeSlotTargets(dailyTargets, slotType, snackCount = 0) {
   let pct = SLOT_SPLIT[slotType] ?? 0;

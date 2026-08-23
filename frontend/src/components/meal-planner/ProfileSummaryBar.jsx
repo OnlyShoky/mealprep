@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { usePrepWeek } from '../../context/PrepWeekContext';
-import { computeDailyTargets, computeTDEE, computeBMR } from '../../utils/nutrition';
 
 const ACTIVITY_LABELS = {
   sedentary:         'Sedentary',
@@ -50,7 +49,8 @@ export default function ProfileSummaryBar() {
     { label: ACTIVITY_LABELS[profile.activityLevel] ?? profile.activityLevel },
     { label: GOAL_LABELS[profile.goal] ?? profile.goal },
     { label: DIETARY_LABELS[profile.dietaryPreference] ?? 'No restriction' },
-    { label: `${dailyTargets?.calories ?? '—'} kcal/day`, highlight: true },
+    { label: `Maint: ${dailyTargets?.tdee ?? '—'} kcal/day` },
+    { label: `Target: ${dailyTargets?.calories ?? '—'} kcal/day`, highlight: true },
     { label: `P: ${dailyTargets?.protein ?? '—'}g  C: ${dailyTargets?.carbs ?? '—'}g  F: ${dailyTargets?.fat ?? '—'}g` },
   ];
 
@@ -77,3 +77,5 @@ export default function ProfileSummaryBar() {
     </div>
   );
 }
+
+
