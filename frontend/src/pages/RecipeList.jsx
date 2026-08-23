@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import { getRecipes } from '../services/recipeRepository';
 
 function useQuery() {
@@ -8,12 +8,15 @@ function useQuery() {
 
 export default function RecipeList() {
   const query = useQuery();
+  const navigate = useNavigate();
   const [recipes, setRecipes] = useState([]);
+  const [totalPages, setTotalPages] = useState(1);
   
   const tag = query.get('tag');
   const ingredient = query.get('ingredient');
   const cuisine = query.get('cuisine');
   const course = query.get('course');
+  const page = parseInt(query.get('page') || '1', 10);
   
   useEffect(() => {
     async function loadRecipes() {
@@ -22,10 +25,13 @@ export default function RecipeList() {
           tag,
           ingredient,
           cuisine,
-          course
+          course,
+          page,
+          pageSize: 12
         });
         if (result && result.recipes) {
           setRecipes(result.recipes);
+          setTotalPages(result.totalPages || 1);
         }
       } catch (err) {
         console.error("Failed to load recipes", err);
@@ -33,13 +39,24 @@ export default function RecipeList() {
     }
     
     loadRecipes();
-  }, [tag, ingredient, cuisine, course]);
+  }, [tag, ingredient, cuisine, course, page]);
 
   let title = "All";
   if (tag) title = tag;
   if (ingredient) title = ingredient;
   if (cuisine) title = cuisine;
   if (course) title = course;
+
+  const handlePageChange = (newPage) => {
+    if (newPage < 1 || newPage > totalPages) return;
+    const params = new URLSearchParams(location.search);
+    if (tag) params.set('tag', tag);
+    if (ingredient) params.set('ingredient', ingredient);
+    if (cuisine) params.set('cuisine', cuisine);
+    if (course) params.set('course', course);
+    params.set('page', newPage);
+    navigate(`/recipes?${params.toString()}`);
+  };
 
   return (
     <div className="max-w-5xl mx-auto px-4 py-8">
@@ -48,7 +65,7 @@ export default function RecipeList() {
       {/* Recipe Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-4 gap-6">
         {recipes.map(recipe => (
-          <Link key={recipe.id} to={`/recipes/${recipe.id}`} className="hover:scale-110 transition-transform">
+          <Link key={recipe.id} to={`/recipes/${recipe.id}`} className="hover:scale-105 transition-transform">
             <div className="bg-orange-50 shadow-lg rounded-lg overflow-hidden flex flex-col h-full text-left">
               {/* Recipe Image */}
               {recipe.image ? (
@@ -68,25 +85,52 @@ export default function RecipeList() {
         ))}
       </div> 
 
-      {/* Pagination (Mocked visual for now to match exactly) */}
-      {recipes.length > 0 && (
-        <div className="mt-20 flex justify-center">
+      {/* Dynamic Pagination */}
+      {totalPages > 1 && (
+        <div className="mt-12 flex justify-center">
             <nav aria-label="Page navigation">
-                <ul className="inline-flex items-center -space-x-px">
+                <ul className="inline-flex items-center space-x-1">
                     <li>
-                        <span className="px-2 py-2 leading-tight text-gray-400 bg-gray-200 border border-gray-300 rounded-l-lg cursor-not-allowed">
+                        <button
+                          onClick={() => handlePageChange(page - 1)}
+                          disabled={page <= 1}
+                          className={`px-3 py-2 leading-tight rounded-l-lg border border-gray-300 ${
+                            page <= 1
+                              ? 'text-gray-400 bg-gray-200 cursor-not-allowed'
+                              : 'text-gray-700 bg-white hover:bg-gray-100 cursor-pointer'
+                          }`}
+                        >
                             <strong>❮</strong>
-                        </span>
+                        </button>
                     </li>
                     
-                    <li>
-                        <span className="px-3 py-2 text-white bg-sepia-800 border border-gray-300">1</span>
-                    </li>
+                    {Array.from({ length: totalPages }, (_, i) => i + 1).map(p => (
+                      <li key={p}>
+                        <button
+                          onClick={() => handlePageChange(p)}
+                          className={`px-3 py-2 border border-gray-300 rounded ${
+                            p === page
+                              ? 'text-white bg-sepia-800 font-bold'
+                              : 'text-gray-700 bg-white hover:bg-gray-100 cursor-pointer'
+                          }`}
+                        >
+                          {p}
+                        </button>
+                      </li>
+                    ))}
                     
                     <li>
-                        <span className="px-2 py-2 leading-tight text-gray-400 bg-gray-200 border border-gray-300 rounded-r-lg cursor-not-allowed">
-                        ❯
-                        </span>
+                        <button
+                          onClick={() => handlePageChange(page + 1)}
+                          disabled={page >= totalPages}
+                          className={`px-3 py-2 leading-tight rounded-r-lg border border-gray-300 ${
+                            page >= totalPages
+                              ? 'text-gray-400 bg-gray-200 cursor-not-allowed'
+                              : 'text-gray-700 bg-white hover:bg-gray-100 cursor-pointer'
+                          }`}
+                        >
+                            ❯
+                        </button>
                     </li>
                 </ul>
             </nav>
@@ -95,3 +139,4 @@ export default function RecipeList() {
     </div>
   );
 }
+
