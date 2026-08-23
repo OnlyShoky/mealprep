@@ -21,28 +21,33 @@ export default function Modal({ isOpen, onClose, title, children }) {
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-      {/* Backdrop */}
+      {/* Darkened Backdrop with Soft Blur */}
       <div 
-        className="fixed inset-0 bg-black bg-opacity-50 transition-opacity"
+        className="fixed inset-0 bg-black/60 backdrop-blur-xs transition-opacity duration-300"
         onClick={onClose}
         aria-hidden="true"
       />
       
-      {/* Modal Content */}
-      <div className="relative bg-sepia-50 rounded-xl shadow-2xl w-full max-w-2xl max-h-[90vh] flex flex-col z-10 border border-sepia-300">
-        <div className="flex justify-between items-center p-6 border-b border-sepia-200">
-          <h2 className="text-2xl font-bold text-normal">{title}</h2>
+      {/* Warm Sepia Solid Opaque Modal Container */}
+      <div className="relative bg-[#fffcf6] text-[#2f1107] rounded-2xl shadow-2xl w-full max-w-2xl max-h-[85vh] flex flex-col z-10 border-2 border-sepia-600/40 overflow-hidden animate-fadeIn">
+        
+        {/* Header */}
+        <div className="flex justify-between items-center px-6 py-4 bg-[#fff5e4] border-b border-sepia-300">
+          <h2 className="text-xl font-bold text-[#2f1107] capitalize tracking-tight">{title}</h2>
           <button 
             onClick={onClose}
-            className="w-8 h-8 rounded-full bg-sepia-200 flex items-center justify-center text-sepia-800 hover:bg-sepia-300 hover:text-sepia-warn transition-colors"
+            className="w-8 h-8 rounded-full bg-white border border-sepia-300 flex items-center justify-center text-[#705C53] hover:bg-[#feeed2] hover:text-[#2f1107] transition-colors shadow-2xs cursor-pointer font-bold"
+            aria-label="Close modal"
           >
             <FontAwesomeIcon icon={faTimes} />
           </button>
         </div>
         
-        <div className="p-6 overflow-y-auto">
+        {/* Body Content */}
+        <div className="p-6 overflow-y-auto bg-[#fffcf6]">
           {children}
         </div>
+
       </div>
     </div>
   );

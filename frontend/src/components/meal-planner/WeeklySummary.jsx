@@ -18,39 +18,24 @@ export default function WeeklySummary() {
   const logged = weekly.calories || 0;
   const goal = profile?.goal || 'deficit';
 
-  // Determine scaling basis so target and maintenance are both visible
+  // Dynamic scaling basis so all markers and bars scale together
   const maxVal = Math.max(maint, target, logged, 1);
   const loggedPct = Math.min(100, (logged / maxVal) * 100);
   const targetPct = Math.min(100, (target / maxVal) * 100);
   const maintPct = Math.min(100, (maint / maxVal) * 100);
 
-  // Goal-aware progress bar color logic
-  let barColor = '#2e7d32'; // Default Emerald Green
-  if (goal === 'surplus') {
-    if (logged <= maint) {
-      barColor = '#38bdf8'; // Light Sky Blue (building up to maintenance)
-    } else if (logged <= target * 1.02) {
-      barColor = '#818cf8'; // Soft Lighter Indigo / Lavender (Growth Zone)
-    } else {
-      barColor = '#c084fc'; // Soft Light Purple (exceeding surplus target)
-    }
-  } else if (goal === 'deficit') {
-    if (logged > maint) {
-      barColor = '#dc2626'; // Red (over maintenance)
-    } else if (logged > target * 1.02) {
-      barColor = '#d97706'; // Amber (in deficit gap)
-    } else {
-      barColor = '#2e7d32'; // Green (on deficit target)
-    }
-  } else {
-    if (logged > target * 1.05) {
-      barColor = '#dc2626';
-    } else if (logged < target * 0.9) {
-      barColor = '#d97706';
-    } else {
-      barColor = '#2e7d32';
-    }
-  }
+  // Dynamic Deficit/Surplus gap (maint - logged)
+  const currentDeficitKcal = maint - logged;
+  const currentSurplusKcal = logged - maint;
+
+  // Dynamic Zone overlay positions — these update reactively as recipes change
+  // Deficit: zone shows remaining gap from end of logged bar up to maintenance
+  const deficitZoneLeft = Math.min(loggedPct, maintPct);
+  const deficitZoneWidth = Math.max(0, maintPct - deficitZoneLeft);
+
+  // Surplus: zone shows area from maintenance up to whichever is further (target or logged)
+  const growthZoneLeft = maintPct;
+  const growthZoneWidth = Math.max(0, Math.max(targetPct, loggedPct) - maintPct);
 
   const targetKg = deficitData ? deficitData.targetKgChange : 0;
   const actualKg = deficitData ? deficitData.actualKgChange : 0;
@@ -110,27 +95,27 @@ export default function WeeklySummary() {
             </div>
           </div>
 
-          {/* Clean Progress Bar Container */}
+          {/* Clean Dynamic Progress Bar Container */}
           <div className="relative h-6 bg-sepia-300 rounded-full overflow-hidden shadow-inner border border-sepia-400 mb-2">
             
-            {/* Deficit Zone Track Background (Fat Loss: Between Target and Maintenance) */}
-            {goal === 'deficit' && targetPct < maintPct && (
+            {/* Deficit Zone Track Background — dynamically resizes as recipes change */}
+            {goal === 'deficit' && deficitZoneWidth > 0 && (
               <div 
-                className="absolute top-0 bottom-0 bg-emerald-200/90 border-l border-emerald-400 z-0"
+                className="absolute top-0 bottom-0 bg-emerald-200/90 border-l border-emerald-400 z-0 transition-all duration-300"
                 style={{ 
-                  left: `${targetPct}%`, 
-                  width: `${maintPct - targetPct}%` 
+                  left: `${deficitZoneLeft}%`, 
+                  width: `${deficitZoneWidth}%` 
                 }}
               />
             )}
 
-            {/* Growth Zone Track Background (Muscle Gain: Between Maintenance and Target) */}
-            {goal === 'surplus' && maintPct < targetPct && (
+            {/* Growth Zone Track Background — dynamically resizes as recipes change */}
+            {goal === 'surplus' && growthZoneWidth > 0 && (
               <div 
-                className="absolute top-0 bottom-0 bg-indigo-200/90 border-l border-indigo-400 z-0"
+                className="absolute top-0 bottom-0 bg-indigo-200/90 border-l border-indigo-400 z-0 transition-all duration-300"
                 style={{ 
-                  left: `${maintPct}%`, 
-                  width: `${targetPct - maintPct}%` 
+                  left: `${growthZoneLeft}%`, 
+                  width: `${growthZoneWidth}%` 
                 }}
               />
             )}
@@ -149,7 +134,7 @@ export default function WeeklySummary() {
                   <>
                     {/* Segment 1: Up to Maintenance (Sky Blue) */}
                     <div 
-                      className="h-full transition-all" 
+                      className="h-full transition-all duration-300" 
                       style={{ 
                         width: `${(Math.min(logged, maint) / logged) * 100}%`,
                         backgroundColor: '#38bdf8' 
@@ -159,7 +144,7 @@ export default function WeeklySummary() {
                     {/* Segment 2: Growth Zone Surplus (Soft Indigo) */}
                     {logged > maint && (
                       <div 
-                        className="h-full transition-all" 
+                        className="h-full transition-all duration-300" 
                         style={{ 
                           width: `${((Math.min(logged, target) - maint) / logged) * 100}%`,
                           backgroundColor: '#818cf8' 
@@ -170,7 +155,7 @@ export default function WeeklySummary() {
                     {/* Segment 3: Over Surplus Target (Soft Purple) */}
                     {logged > target && (
                       <div 
-                        className="h-full transition-all" 
+                        className="h-full transition-all duration-300" 
                         style={{ 
                           width: `${((logged - target) / logged) * 100}%`,
                           backgroundColor: '#c084fc' 
@@ -183,7 +168,7 @@ export default function WeeklySummary() {
                   <>
                     {/* Segment 1: Up to Deficit Target (Emerald Green) */}
                     <div 
-                      className="h-full transition-all" 
+                      className="h-full transition-all duration-300" 
                       style={{ 
                         width: `${(Math.min(logged, target) / logged) * 100}%`,
                         backgroundColor: '#2e7d32' 
@@ -193,7 +178,7 @@ export default function WeeklySummary() {
                     {/* Segment 2: Deficit Buffer (Amber) */}
                     {logged > target && (
                       <div 
-                        className="h-full transition-all" 
+                        className="h-full transition-all duration-300" 
                         style={{ 
                           width: `${((Math.min(logged, maint) - target) / logged) * 100}%`,
                           backgroundColor: '#d97706' 
@@ -204,7 +189,7 @@ export default function WeeklySummary() {
                     {/* Segment 3: Over Maintenance (Red Alarm) */}
                     {logged > maint && (
                       <div 
-                        className="h-full transition-all" 
+                        className="h-full transition-all duration-300" 
                         style={{ 
                           width: `${((logged - maint) / logged) * 100}%`,
                           backgroundColor: '#dc2626' 
@@ -217,11 +202,11 @@ export default function WeeklySummary() {
               </div>
             )}
 
-            {/* Zone Label Text Overlay (Dynamically constrained to fit inside zone box) */}
-            {goal === 'deficit' && targetPct < maintPct && (
+            {/* Zone Label Text Overlay */}
+            {goal === 'deficit' && deficitZoneWidth > 8 && (
               <div 
-                className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none z-20 overflow-hidden px-1"
-                style={{ left: `${targetPct}%`, width: `${maintPct - targetPct}%` }}
+                className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none z-20 overflow-hidden px-1 transition-all duration-300"
+                style={{ left: `${deficitZoneLeft}%`, width: `${deficitZoneWidth}%` }}
               >
                 <span className="text-[8px] sm:text-[9px] font-extrabold text-emerald-950 uppercase tracking-tight bg-white/85 px-1 py-0.2 rounded shadow-2xs max-w-[95%] truncate border border-emerald-300">
                   Deficit Zone
@@ -229,10 +214,10 @@ export default function WeeklySummary() {
               </div>
             )}
 
-            {goal === 'surplus' && maintPct < targetPct && (
+            {goal === 'surplus' && growthZoneWidth > 8 && (
               <div 
-                className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none z-20 overflow-hidden px-1"
-                style={{ left: `${maintPct}%`, width: `${targetPct - maintPct}%` }}
+                className="absolute top-0 bottom-0 flex items-center justify-center pointer-events-none z-20 overflow-hidden px-1 transition-all duration-300"
+                style={{ left: `${growthZoneLeft}%`, width: `${growthZoneWidth}%` }}
               >
                 <span className="text-[8px] sm:text-[9px] font-extrabold text-indigo-950 uppercase tracking-tight bg-white/85 px-1 py-0.2 rounded shadow-2xs max-w-[95%] truncate border border-indigo-300">
                   Growth Zone
@@ -243,7 +228,7 @@ export default function WeeklySummary() {
             {/* Target Line Marker */}
             {targetPct > 0 && targetPct < 100 && (
               <div 
-                className="absolute top-0 bottom-0 w-0.5 bg-sepia-900 z-30"
+                className="absolute top-0 bottom-0 w-0.5 bg-sepia-900 z-30 transition-all duration-300"
                 style={{ left: `${targetPct}%` }}
                 title={`Target: ${target.toLocaleString()} kcal`}
               />
@@ -252,14 +237,14 @@ export default function WeeklySummary() {
             {/* Maintenance Line Marker */}
             {maintPct > 0 && maintPct < 100 && (
               <div 
-                className="absolute top-0 bottom-0 w-0.5 bg-orange-600 z-30"
+                className="absolute top-0 bottom-0 w-0.5 bg-orange-600 z-30 transition-all duration-300"
                 style={{ left: `${maintPct}%` }}
                 title={`Maintenance: ${maint.toLocaleString()} kcal`}
               />
             )}
           </div>
 
-          {/* Bar Legend */}
+          {/* Dynamic Bar Legend */}
           <div className="flex flex-wrap items-center justify-between text-xs text-gray-600 gap-2">
             <div className="flex flex-wrap items-center gap-3">
               <span className="flex items-center gap-1 font-medium">
@@ -278,14 +263,27 @@ export default function WeeklySummary() {
               )}
             </div>
 
-            {goal === 'deficit' && maint > target && (
-              <span className="text-[11px] font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded border border-emerald-300">
-                Deficit Gap: {(maint - target).toLocaleString()} kcal/wk
+            {/* Dynamically recalculated gap badge */}
+            {goal === 'deficit' && maint > 0 && (
+              <span className={`text-[11px] font-bold px-2 py-0.5 rounded border ${
+                currentDeficitKcal > 0 
+                  ? 'text-emerald-800 bg-emerald-100 border-emerald-300' 
+                  : 'text-red-800 bg-red-100 border-red-300'
+              }`}>
+                {currentDeficitKcal > 0 
+                  ? `Active Deficit: -${currentDeficitKcal.toLocaleString()} kcal/wk` 
+                  : `Surplus Over Maint: +${Math.abs(currentDeficitKcal).toLocaleString()} kcal/wk`}
               </span>
             )}
-            {goal === 'surplus' && target > maint && (
-              <span className="text-[11px] font-bold text-indigo-800 bg-indigo-100 px-2 py-0.5 rounded border border-indigo-300">
-                Surplus Gap: +{(target - maint).toLocaleString()} kcal/wk
+            {goal === 'surplus' && maint > 0 && (
+              <span className={`text-[11px] font-bold px-2 py-0.5 rounded border ${
+                currentSurplusKcal >= 0 
+                  ? 'text-indigo-800 bg-indigo-100 border-indigo-300' 
+                  : 'text-amber-800 bg-amber-100 border-amber-300'
+              }`}>
+                {currentSurplusKcal >= 0 
+                  ? `Active Surplus: +${currentSurplusKcal.toLocaleString()} kcal/wk` 
+                  : `Below Maint: -${Math.abs(currentSurplusKcal).toLocaleString()} kcal/wk`}
               </span>
             )}
           </div>
