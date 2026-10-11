@@ -3,17 +3,46 @@ import { usePrepWeek } from '../../context/PrepWeekContext';
 import { formatQuantity } from '../../utils/ingredientCategories';
 import RecipePicker from './RecipePicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTimes, faClock, faUtensils, faFire, faExchangeAlt, faExternalLinkAlt } from '@fortawesome/free-solid-svg-icons';
+import {
+  faTimes,
+  faClock,
+  faUtensils,
+  faFire,
+  faExchangeAlt,
+  faExternalLinkAlt,
+  faThumbtack,
+  faRotateLeft,
+} from '@fortawesome/free-solid-svg-icons';
 import { Link } from 'react-router-dom';
 
 export default function RecipeDrawer() {
-  const { activeRecipeDrawer, closeRecipeDrawer, people, swapRecipe, recipes } = usePrepWeek();
+  const {
+    activeRecipeDrawer,
+    closeRecipeDrawer,
+    people,
+    swapRecipe,
+    recipes,
+    pins,
+    togglePin,
+    cook,
+    left,
+    setBatchCook,
+    removeBatchCook,
+    unlinkTaper,
+  } = usePrepWeek();
+
   const [isPickerOpen, setIsPickerOpen] = useState(false);
 
   if (!activeRecipeDrawer) return null;
 
   const { recipe, slotId, day } = activeRecipeDrawer;
   if (!recipe) return null;
+
+  const isPinned = pins.includes(slotId);
+  const isTaper = left.includes(slotId);
+  const cookCount = cook[slotId] || 0;
+  const isCookBatch = cookCount > 1;
+  const isBreakfast = slotId?.includes('breakfast');
 
   const handleSelectAlternative = (newRecipeId) => {
     swapRecipe(day, slotId, newRecipeId);
@@ -71,8 +100,61 @@ export default function RecipeDrawer() {
         </div>
 
         {/* Content body */}
-        <div className="flex-1 overflow-y-auto p-5 space-y-6 text-[#2f1107]">
+        <div className="flex-1 overflow-y-auto p-5 space-y-5 text-[#2f1107]">
           
+          {/* Actions Bar inside Drawer: Pin & Batch Cooking */}
+          <div className="flex flex-wrap items-center justify-between gap-2 p-3 bg-[#fff5e4] rounded-2xl border border-[#edd3b6]">
+            {/* Pin Toggle */}
+            <button
+              onClick={() => togglePin(slotId)}
+              className={`px-3 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 border transition-colors cursor-pointer ${
+                isPinned
+                  ? 'bg-[#705c53] text-[#fffcf6] border-[#705c53]'
+                  : 'bg-white text-[#705c53] border-[#edd3b6] hover:bg-[#fae5c0]'
+              }`}
+            >
+              <FontAwesomeIcon icon={faThumbtack} />
+              <span>{isPinned ? 'Plato fijado (📌)' : 'Fijar comida'}</span>
+            </button>
+
+            {/* Batch options (for lunch/dinner) */}
+            {!isBreakfast && (
+              <div className="flex items-center gap-1.5">
+                {isTaper ? (
+                  <button
+                    onClick={() => unlinkTaper(slotId)}
+                    className="px-3 py-1.5 bg-white text-[#705c53] border border-[#edd3b6] rounded-full text-xs font-semibold hover:bg-[#fae5c0] flex items-center gap-1 cursor-pointer"
+                  >
+                    <FontAwesomeIcon icon={faRotateLeft} className="text-[10px]" />
+                    <span>Cocinar de nuevo aquí</span>
+                  </button>
+                ) : isCookBatch ? (
+                  <button
+                    onClick={() => removeBatchCook(slotId)}
+                    className="px-3 py-1.5 bg-white text-[#705c53] border border-[#edd3b6] rounded-full text-xs font-semibold hover:bg-[#fae5c0] flex items-center gap-1 cursor-pointer"
+                  >
+                    <FontAwesomeIcon icon={faRotateLeft} className="text-[10px]" />
+                    <span>Cocinar a diario</span>
+                  </button>
+                ) : (
+                  <div className="flex items-center gap-1">
+                    <span className="text-[11px] text-[#705c53] font-medium mr-1">Tapers:</span>
+                    {[2, 3].map(days => (
+                      <button
+                        key={days}
+                        onClick={() => setBatchCook(slotId, days)}
+                        className="px-2 py-1 bg-white text-[#2f1107] border border-[#edd3b6] rounded-lg text-xs font-bold hover:bg-[#fae5c0] cursor-pointer"
+                        title={`Cocinar para ${days} días`}
+                      >
+                        {days} días
+                      </button>
+                    ))}
+                  </div>
+                )}
+              </div>
+            )}
+          </div>
+
           {/* Quick Stats Bar */}
           <div className="flex items-center justify-around bg-[#fff5e4] p-3 rounded-xl border border-[#edd3b6] text-xs font-medium">
             <div className="flex items-center gap-1.5 text-[#705c53]">
@@ -98,7 +180,7 @@ export default function RecipeDrawer() {
             </p>
           )}
 
-          {/* Macros (Real Recipe Macros) */}
+          {/* Macros */}
           {recipe.nutrition_per_serving && (
             <div className="bg-[#feeed2]/60 p-3.5 rounded-xl border border-[#edd3b6]">
               <div className="text-xs font-bold text-[#705c53] uppercase tracking-wider mb-2">
@@ -125,7 +207,7 @@ export default function RecipeDrawer() {
             </div>
           )}
 
-          {/* Ingredients list (multiplied by number of people) */}
+          {/* Ingredients list */}
           <div>
             <div className="flex items-center justify-between mb-3">
               <h3 className="font-display text-lg text-[#2f1107]">

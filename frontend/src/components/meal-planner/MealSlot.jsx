@@ -1,25 +1,71 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { usePrepWeek } from '../../context/PrepWeekContext';
+import { DAYS } from '../../utils/autoGenerate';
 import RecipePicker from './RecipePicker';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
-  faEllipsisV,
   faThumbtack,
-  faExchangeAlt,
-  faUtensils,
-  faRotateLeft,
-  faTimes,
-  faClock,
   faFire,
   faPlus,
+  faUtensils,
+  faClock,
+  faCoffee,
+  faSun,
+  faMoon,
+  faCookieBite,
 } from '@fortawesome/free-solid-svg-icons';
 
-const SLOT_NAMES_ES = {
-  breakfast: 'Desayuno',
-  lunch: 'Comida',
-  dinner: 'Cena',
-  snack: 'Tentempié',
+function formatShortDuration(timeStr) {
+  if (!timeStr) return '';
+  const parts = timeStr.split(':').map(Number);
+  if (parts.length !== 3) return timeStr;
+  const [h, m] = parts;
+  if (h === 0) return `${m} min`;
+  if (m === 0) return `${h} h`;
+  return `${h}h ${m}m`;
+}
+
+const SLOT_CONFIG = {
+  breakfast: { label: 'Desayuno', icon: faCoffee },
+  lunch: { label: 'Comida', icon: faUtensils },
+  dinner: { label: 'Cena', icon: faMoon },
+  snack: { label: 'Snack', icon: faCookieBite },
 };
+
+// Clean Tupper / Food Container Icon
+function TupperIcon({ className = 'w-3 h-3' }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
+      {/* Taper lid with clip tabs */}
+      <rect x="2.5" y="5.5" width="19" height="3.5" rx="1.5" fill="currentColor" fillOpacity="0.3" />
+      <line x1="1" y1="7.2" x2="2.5" y2="7.2" strokeWidth="2.5" />
+      <line x1="21.5" y1="7.2" x2="23" y2="7.2" strokeWidth="2.5" />
+      {/* Base container body */}
+      <path d="M4 9l1 9.5a2 2 0 0 0 2 1.5h10a2 2 0 0 0 2-1.5l1-9.5H4z" fill="currentColor" fillOpacity="0.1" />
+      {/* Compartment divider */}
+      <line x1="12" y1="11.5" x2="12" y2="18.5" strokeDasharray="1.5 2" />
+    </svg>
+  );
+}
+
+// Harmonious batch color themes linking cook day and tapers
+const BATCH_THEMES = [
+  { border: '#b45309', bg: '#fff5e8', taperBg: '#ffeed9', accent: '#b45309' }, // Lunes (Terracotta)
+  { border: '#15803d', bg: '#f0fdf4', taperBg: '#dcfce7', accent: '#15803d' }, // Martes (Olive / Green)
+  { border: '#0284c7', bg: '#f0f9ff', taperBg: '#e0f2fe', accent: '#0284c7' }, // Miércoles (Ocean / Blue)
+  { border: '#7c3aed', bg: '#faf5ff', taperBg: '#f3e8ff', accent: '#7c3aed' }, // Jueves (Violet / Purple)
+  { border: '#ea580c', bg: '#fff7ed', taperBg: '#ffedd5', accent: '#ea580c' }, // Viernes (Copper / Orange)
+  { border: '#0f766e', bg: '#f0fdfa', taperBg: '#ccfbf1', accent: '#0f766e' }, // Sábado (Teal)
+  { border: '#705c53', bg: '#faf6f0', taperBg: '#f5eee6', accent: '#705c53' }, // Domingo (Sepia)
+];
 
 export default function MealSlot({ day, slot }) {
   const {
@@ -29,17 +75,11 @@ export default function MealSlot({ day, slot }) {
     pins,
     viewLevel,
     togglePin,
-    swapRecipe,
-    setBatchCook,
-    removeBatchCook,
-    unlinkTaper,
-    clearSlot,
     openRecipeDrawer,
+    swapRecipe,
   } = usePrepWeek();
 
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isPickerOpen, setIsPickerOpen] = useState(false);
-  const [isBatchPickerOpen, setIsBatchPickerOpen] = useState(false);
+  const [isPickerOpen, setIsPickerOpen] = React.useState(false);
 
   const slotKey = slot.id; // e.g. "monday-lunch"
   const recipe = recipes.find(r => r.id === slot.recipeId);
@@ -48,14 +88,32 @@ export default function MealSlot({ day, slot }) {
   const cookCount = cook[slotKey] || 0;
   const isCookBatch = cookCount > 1;
 
-  const slotTypeName = SLOT_NAMES_ES[slot.type] || slot.type;
+  const currentDayIdx = DAYS.indexOf(day);
   const isNutri = viewLevel === 'nutri';
+  const slotConfig = SLOT_CONFIG[slot.type] || { label: 'Comida', icon: faSun };
+  const duration = formatShortDuration(recipe?.total_time || recipe?.cook_time);
 
-  // Fixed card heights so all rows align 100% across Monday-Sunday
-  const cardHeightClass = isNutri ? 'h-[198px]' : 'h-[172px]';
+  // Find origin day index for batch coloring
+  let batchTheme = null;
+  if (isCookBatch) {
+    batchTheme = BATCH_THEMES[currentDayIdx % BATCH_THEMES.length];
+  } else if (isTaper) {
+    // Look backward to find origin cook day
+    for (let d = currentDayIdx - 1; d >= 0; d--) {
+      const parentKey = `${DAYS[d]}-${slot.type}`;
+      if (cook[parentKey]) {
+        batchTheme = BATCH_THEMES[d % BATCH_THEMES.length];
+        break;
+      }
+    }
+    if (!batchTheme) batchTheme = BATCH_THEMES[0];
+  }
+
+  // Compact card height
+  const cardHeightClass = isNutri ? 'h-[148px]' : 'h-[128px]';
 
   const handleCardClick = (e) => {
-    if (e.target.closest('button') || e.target.closest('.no-drawer-click')) return;
+    if (e.target.closest('button')) return;
     if (recipe) {
       openRecipeDrawer({ recipe, slotId: slot.id, day });
     } else {
@@ -63,263 +121,156 @@ export default function MealSlot({ day, slot }) {
     }
   };
 
+  // Dynamic batch styles with consistent 3px top border across all cards
+  const cardStyle = {
+    borderTopWidth: '3px',
+    borderTopStyle: 'solid',
+    borderTopColor: 'transparent',
+  };
+  if (isCookBatch && batchTheme) {
+    cardStyle.borderTopColor = batchTheme.border;
+    cardStyle.borderColor = batchTheme.border;
+    cardStyle.backgroundColor = batchTheme.bg;
+  } else if (isTaper && batchTheme) {
+    cardStyle.borderTopColor = batchTheme.border;
+    cardStyle.borderColor = '#c0b4a7';
+    cardStyle.borderStyle = 'dashed';
+    cardStyle.borderTopStyle = 'solid';
+    cardStyle.backgroundColor = '#eae4dc'; // Visibly grayish-sepia tone for stored taper
+  }
+
   return (
     <div
       onClick={handleCardClick}
+      style={cardStyle}
       className={`relative group rounded-xl overflow-hidden transition-all duration-150 cursor-pointer border flex flex-col ${cardHeightClass} ${
-        isTaper
-          ? 'bg-[#fffcf6]/80 border-dashed border-[#edd3b6] hover:border-[#705c53]'
-          : isCookBatch
-          ? 'bg-[#fffcf6] border-[#705c53] ring-1 ring-[#705c53]/40 shadow-xs'
-          : 'bg-[#fffcf6] border-[#edd3b6] hover:border-[#dbc0a1] shadow-xs'
+        !batchTheme ? 'bg-[#fffcf6] border-[#edd3b6] hover:border-[#dbc0a1] shadow-2xs' : 'shadow-xs'
       }`}
     >
       {/* ─── EMPTY STATE ─── */}
       {!recipe ? (
-        <div className="w-full h-full p-3 flex flex-col items-center justify-center text-[#705c53] hover:bg-[#fff5e4] transition-colors">
-          <span className="text-[10px] uppercase font-bold tracking-wider text-[#705c53]/70 mb-2">
-            {slotTypeName}
-          </span>
+        <div className="w-full h-full p-2 flex flex-col items-center justify-center text-[#705c53] hover:bg-[#fff5e4] transition-colors">
+          <div className="flex items-center gap-1 text-[9.5px] font-bold uppercase tracking-wider text-[#8c7468] mb-1.5">
+            <FontAwesomeIcon icon={slotConfig.icon} className="text-[8px] text-[#a89083]" />
+            <span>{slotConfig.label}</span>
+          </div>
           <button
             type="button"
             onClick={(e) => {
               e.stopPropagation();
               setIsPickerOpen(true);
             }}
-            className="px-3 py-1 bg-[#fff5e4] text-[#2f1107] border border-[#edd3b6] rounded-full text-xs font-semibold hover:bg-[#fae5c0] transition-colors flex items-center gap-1.5 cursor-pointer shadow-2xs"
+            className="px-2.5 py-0.5 bg-[#fff5e4] text-[#2f1107] border border-[#edd3b6] rounded-full text-[10px] font-semibold hover:bg-[#fae5c0] transition-colors flex items-center gap-1 cursor-pointer shadow-2xs"
           >
-            <FontAwesomeIcon icon={faPlus} className="text-[10px]" />
+            <FontAwesomeIcon icon={faPlus} className="text-[8px]" />
             Añadir
           </button>
         </div>
       ) : (
         /* ─── FILLED STATE ─── */
         <>
-          {/* Card Top: Image Area (Fixed 88px) */}
-          <div className="h-[88px] w-full bg-[#fae5c0] relative shrink-0 overflow-hidden">
+          {/* Card Top: Clean Food Image Banner (Dimmed/grayish on taper days) */}
+          <div className={`h-[58px] w-full relative shrink-0 overflow-hidden ${isTaper ? 'bg-[#dfd7cc]' : 'bg-[#fae5c0]'}`}>
             {recipe.image || recipe.image_card ? (
               <img
                 src={recipe.image || recipe.image_card}
                 alt={recipe.title}
-                className="w-full h-full object-cover group-hover:scale-102 transition-transform duration-300"
+                className={`w-full h-full object-cover group-hover:scale-103 transition-transform duration-300 ${
+                  isTaper ? 'grayscale-[0.6] opacity-75 contrast-95' : ''
+                }`}
               />
             ) : (
-              <div className="w-full h-full flex items-center justify-center text-[#705c53] font-display text-xs">
+              <div className="w-full h-full flex items-center justify-center text-[#705c53] font-display text-[10px]">
                 Meal Prep Codex
               </div>
             )}
 
-            <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent pointer-events-none" />
-
-            {/* Top Left: Meal Type Tag & Pin */}
-            <div className="absolute top-1.5 left-1.5 flex items-center gap-1">
-              <span className="px-1.5 py-0.5 bg-black/60 backdrop-blur-xs rounded text-[9px] uppercase font-bold tracking-wider text-white">
-                {slotTypeName}
-              </span>
-
-              {isPinned && (
-                <span className="px-1.5 py-0.5 bg-[#6d2323] text-white rounded text-[9px] font-bold shadow-xs" title="Plato anclado">
-                  <FontAwesomeIcon icon={faThumbtack} />
-                </span>
-              )}
-            </div>
-
-            {/* Top Right: 3-dot Action Menu */}
-            <div className="absolute top-1 right-1 no-drawer-click z-10">
+            {/* Direct Pin Button (Top-Right) */}
+            <div className="absolute top-1 right-1 z-10">
               <button
                 type="button"
                 onClick={(e) => {
                   e.stopPropagation();
-                  setIsMenuOpen(!isMenuOpen);
+                  togglePin(slotKey);
                 }}
-                className="w-6 h-6 rounded-full bg-black/55 text-white hover:bg-black/85 flex items-center justify-center text-xs transition-colors cursor-pointer shadow-xs"
-                title="Acciones"
+                className={`w-6 h-6 rounded-full flex items-center justify-center transition-all cursor-pointer shadow-xs ${
+                  isPinned
+                    ? 'bg-[#705c53] text-[#fffcf6] opacity-100 ring-1 ring-white/60 shadow-sm'
+                    : 'bg-white/85 text-[#705c53] hover:bg-white hover:text-[#2f1107] opacity-0 group-hover:opacity-100 max-md:opacity-75'
+                }`}
+                title={isPinned ? 'Plato fijado (📌 no cambiará al regenerar). Clic para desanclar' : 'Fijar plato (📌 mantendrá esta receta al regenerar)'}
               >
-                <FontAwesomeIcon icon={faEllipsisV} />
+                <FontAwesomeIcon icon={faThumbtack} className={`text-[10px] ${isPinned ? '-rotate-45' : ''}`} />
               </button>
-
-              {/* Action Dropdown Menu */}
-              {isMenuOpen && (
-                <div
-                  className="absolute right-0 top-7 w-52 bg-[#fffcf6] text-[#2f1107] rounded-xl shadow-xl border border-[#edd3b6] py-1.5 z-40 text-xs animate-fade-in"
-                  onClick={(e) => e.stopPropagation()}
-                >
-                  <button
-                    onClick={() => {
-                      togglePin(slotKey);
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] flex items-center gap-2 cursor-pointer font-medium"
-                  >
-                    <FontAwesomeIcon icon={faThumbtack} className={isPinned ? 'text-[#6d2323]' : 'text-[#705c53]'} />
-                    <span>{isPinned ? 'Soltar (desanclar)' : '📌 Fijar comida'}</span>
-                  </button>
-
-                  <button
-                    onClick={() => {
-                      setIsMenuOpen(false);
-                      setIsPickerOpen(true);
-                    }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] flex items-center gap-2 cursor-pointer font-medium"
-                  >
-                    <FontAwesomeIcon icon={faExchangeAlt} className="text-[#705c53]" />
-                    <span>Cambiar por otra</span>
-                  </button>
-
-                  {slot.type !== 'breakfast' && (
-                    <>
-                      <div className="h-px bg-[#edd3b6] my-1" />
-
-                      {isTaper ? (
-                        <button
-                          onClick={() => {
-                            unlinkTaper(slotKey);
-                            setIsMenuOpen(false);
-                          }}
-                          className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] flex items-center gap-2 cursor-pointer font-medium text-[#705c53]"
-                        >
-                          <FontAwesomeIcon icon={faRotateLeft} />
-                          <span>↺ Cocinar de nuevo aquí</span>
-                        </button>
-                      ) : isCookBatch ? (
-                        <button
-                          onClick={() => {
-                            removeBatchCook(slotKey);
-                            setIsMenuOpen(false);
-                          }}
-                          className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] flex items-center gap-2 cursor-pointer font-medium text-[#705c53]"
-                        >
-                          <FontAwesomeIcon icon={faRotateLeft} />
-                          <span>↺ Volver a cocinar diario</span>
-                        </button>
-                      ) : (
-                        <button
-                          onClick={() => {
-                            setIsBatchPickerOpen(true);
-                            setIsMenuOpen(false);
-                          }}
-                          className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] flex items-center gap-2 cursor-pointer font-medium text-[#2f1107]"
-                        >
-                          <span>🥡 Cocinar y comer varios días…</span>
-                        </button>
-                      )}
-                    </>
-                  )}
-
-                  <div className="h-px bg-[#edd3b6] my-1" />
-
-                  <button
-                    onClick={() => {
-                      clearSlot(day, slot.id);
-                      setIsMenuOpen(false);
-                    }}
-                    className="w-full text-left px-3 py-1.5 hover:bg-[#fff5e4] text-[#6d2323] flex items-center gap-2 cursor-pointer font-medium"
-                  >
-                    <FontAwesomeIcon icon={faTimes} />
-                    <span>Quitar comida</span>
-                  </button>
-                </div>
-              )}
             </div>
 
-            {/* Bottom Overlay Badges: Batch status & Prep Time */}
-            <div className="absolute bottom-1 left-1.5 right-1.5 flex items-center justify-between text-white text-[10px] pointer-events-none">
-              {isCookBatch && (
-                <span className="bg-[#705c53] font-bold px-1.5 py-0.2 rounded shadow-xs flex items-center gap-1">
-                  <FontAwesomeIcon icon={faUtensils} className="text-[8px]" />
-                  Cocinas {cookCount}
-                </span>
-              )}
-
-              {isTaper && (
-                <span className="bg-[#2f1107]/80 text-[#feeed2] font-semibold px-1.5 py-0.2 rounded shadow-xs flex items-center gap-1">
-                  🥡 Taper
-                </span>
-              )}
-
-              {recipe.total_time && (
-                <span className="ml-auto text-white/95 text-[9px] flex items-center gap-0.5 bg-black/35 px-1 rounded">
-                  <FontAwesomeIcon icon={faClock} className="text-[7px]" />
-                  {recipe.total_time.replace(/^00:/, '')}
-                </span>
-              )}
-            </div>
-          </div>
-
-          {/* Card Middle: Title Container (Strictly Fixed 48px height to align all rows) */}
-          <div className="px-2.5 pt-2 pb-1 h-[48px] flex items-center overflow-hidden">
-            <h4
-              className="font-semibold text-xs text-[#2f1107] line-clamp-2 leading-snug group-hover:text-[#705c53] transition-colors"
-              title={recipe.title}
-            >
-              {recipe.title}
-            </h4>
-          </div>
-
-          {/* Card Bottom: Nutri Mode Strip (Fixed 26px height when active) */}
-          {isNutri && (
-            <div className="px-2.5 pb-2 pt-0.5 mt-auto h-[26px] flex items-center justify-between border-t border-[#edd3b6]/50 text-[10px] text-[#705c53] shrink-0">
-              <div className="font-bold text-[#2f1107] flex items-center gap-1">
-                <FontAwesomeIcon icon={faFire} className="text-[#6d2323] text-[9px]" />
-                <span>{recipe.nutrition_per_serving?.calories || '--'}</span> <span className="text-[9px] font-normal text-[#705c53]">kcal</span>
+            {/* Batch Visual Indicator (Top-Left) */}
+            {isCookBatch && batchTheme && (
+              <div
+                style={{ backgroundColor: batchTheme.accent }}
+                className="absolute top-1 left-1 px-1.5 py-0.2 rounded-full text-white text-[8.5px] font-bold shadow-xs flex items-center gap-0.5"
+                title={`Cocinas ${cookCount} raciones`}
+              >
+                <FontAwesomeIcon icon={faUtensils} className="text-[7px]" />
+                <span>x{cookCount}</span>
               </div>
-              <div className="flex items-center gap-1 font-mono text-[9px] text-[#705c53]">
+            )}
+
+            {/* Clear Tupper Badge (Bottom-Right, replacing Chinese box emoji) */}
+            {isTaper && (
+              <div
+                className="absolute bottom-1 right-1 px-1.5 py-0.5 rounded-md bg-[#2f1107]/80 backdrop-blur-xs text-[#fffcf6] shadow-xs flex items-center gap-1 text-[8.5px] font-bold tracking-wide select-none"
+                title="Comida de táper (recalentar del día anterior)"
+              >
+                <TupperIcon className="w-2.5 h-2.5 text-[#f5d0a9]" />
+                <span>Táper</span>
+              </div>
+            )}
+          </div>
+
+          {/* Card Middle: Meta Row (Slot Type + Duration) & Title with strictly locked horizontal alignment */}
+          <div className="px-2 pt-1.5 pb-1 flex flex-col justify-start flex-1 overflow-hidden">
+            {/* Meta Row: Strictly locked at top of text container */}
+            <div className="h-[13px] flex items-center justify-between text-[9px] font-bold uppercase tracking-wider text-[#705c53] leading-none mb-1 shrink-0">
+              <span className="flex items-center gap-1">
+                <FontAwesomeIcon icon={slotConfig.icon} className="text-[7.5px] text-[#a89083]" />
+                {slotConfig.label}
+              </span>
+              {duration && (
+                <span className="flex items-center gap-0.5 text-[#8c7468] font-medium lowercase tracking-normal">
+                  <FontAwesomeIcon icon={faClock} className="text-[7.5px] text-[#b89f91]" />
+                  {duration}
+                </span>
+              )}
+            </div>
+
+            {/* Title Container: Fixed height, top-aligned so 1-line and 2-line titles always share the exact same top baseline */}
+            <div className="h-[28px] flex items-start overflow-hidden">
+              <h4
+                className={`font-semibold text-[11px] line-clamp-2 leading-tight group-hover:text-[#705c53] transition-colors ${
+                  isTaper ? 'text-[#705c53]' : 'text-[#2f1107]'
+                }`}
+                title={recipe.title}
+              >
+                {recipe.title}
+              </h4>
+            </div>
+          </div>
+
+          {/* Card Bottom: Nutri Strip (Fixed 20px when active) */}
+          {isNutri && (
+            <div className="px-2 pb-1 pt-0 mt-auto h-[20px] flex items-center justify-between border-t border-[#edd3b6]/40 text-[9px] text-[#705c53] shrink-0 leading-none">
+              <div className="font-bold text-[#2f1107] flex items-center gap-0.5">
+                <FontAwesomeIcon icon={faFire} className="text-[#6d2323] text-[8px]" />
+                <span>{recipe.nutrition_per_serving?.calories || '--'}</span> <span className="font-normal text-[#705c53]">kcal</span>
+              </div>
+              <div className="flex items-center gap-1 font-mono text-[8.5px] text-[#705c53]">
                 <span>P:{recipe.nutrition_per_serving?.protein || 0}g</span>
                 <span>C:{recipe.nutrition_per_serving?.carbs || 0}g</span>
               </div>
             </div>
           )}
         </>
-      )}
-
-      {/* Batch Days Selector Dialog */}
-      {isBatchPickerOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/40 backdrop-blur-xs no-drawer-click"
-          onClick={(e) => {
-            e.stopPropagation();
-            setIsBatchPickerOpen(false);
-          }}
-        >
-          <div
-            className="bg-[#fffcf6] w-full max-w-xs rounded-2xl shadow-xl border border-[#edd3b6] p-4 text-[#2f1107]"
-            onClick={(e) => e.stopPropagation()}
-          >
-            <div className="font-display text-base font-bold mb-1">
-              Cocinar una vez y guardar tapers
-            </div>
-            <p className="text-xs text-[#705c53] mb-3">
-              ¿Para cuántos días quieres cocinar {recipe?.title}?
-            </p>
-
-            <div className="space-y-2">
-              {[2, 3, 4].map(days => (
-                <button
-                  key={days}
-                  type="button"
-                  onClick={() => {
-                    setBatchCook(slotKey, days);
-                    setIsBatchPickerOpen(false);
-                  }}
-                  className="w-full p-2.5 bg-[#fff5e4] hover:bg-[#fae5c0] rounded-xl border border-[#edd3b6] text-left flex items-center justify-between text-xs font-bold cursor-pointer transition-colors"
-                >
-                  <span>Cocinar para {days} días</span>
-                  <span className="text-[#705c53] text-[11px] font-normal">
-                    {days - 1} tapers 🥡
-                  </span>
-                </button>
-              ))}
-            </div>
-
-            <button
-              type="button"
-              onClick={() => setIsBatchPickerOpen(false)}
-              className="mt-3 w-full py-1.5 border border-[#edd3b6] text-[#705c53] rounded-full text-xs hover:bg-[#fff5e4] cursor-pointer"
-            >
-              Cancelar
-            </button>
-          </div>
-        </div>
       )}
 
       {/* Recipe Picker modal */}

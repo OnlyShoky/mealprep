@@ -48,7 +48,7 @@ export default function ShoppingList() {
         const recipe = recipeMap[slot.recipeId];
         if (!recipe || !recipe.ingredients) return;
 
-        // If it's a taper slot, ingredients are already accounted for on cook day!
+        // Taper slots are already accounted for on cook day
         if (left.includes(slot.id)) return;
 
         const cookMultiplier = cook[slot.id] || 1;
@@ -73,7 +73,6 @@ export default function ShoppingList() {
       });
     });
 
-    // Add extra items
     extraItems.forEach(item => {
       const key = `extra-${item.id}`;
       map[key] = {
@@ -152,17 +151,17 @@ export default function ShoppingList() {
   });
 
   return (
-    <div className="max-w-5xl mx-auto space-y-6">
+    <div className="max-w-4xl mx-auto space-y-4">
       
       {/* ══════════════════════════════════════════════════════════════
           PRINT-ONLY EXCLUSIVE SECTION (VISIBLE ONLY WHEN PRINTING)
          ══════════════════════════════════════════════════════════════ */}
-      <div className="hidden print:block mb-6">
-        <div className="flex items-center justify-between border-b-2 border-black pb-4 mb-5">
+      <div className="hidden print:block mb-4">
+        <div className="flex items-center justify-between border-b-2 border-black pb-3 mb-4">
           <div className="flex items-center gap-3">
-            <img src="/favicon/logo.png" alt="Meal Prep Codex" className="h-16 w-auto object-contain" />
+            <img src="/favicon/logo.png" alt="Meal Prep Codex" className="h-14 w-auto object-contain" />
             <div>
-              <h1 className="text-2xl font-bold text-black font-display tracking-tight m-0 text-left">
+              <h1 className="text-xl font-bold text-black font-display tracking-tight m-0 text-left">
                 Meal Prep Codex
               </h1>
               <p className="text-xs text-gray-700 m-0">
@@ -177,27 +176,26 @@ export default function ShoppingList() {
         </div>
 
         {/* Print Columns Grid */}
-        <div className="grid grid-cols-2 gap-6 text-xs text-black">
+        <div className="grid grid-cols-2 gap-4 text-xs text-black">
           {AISLES.map(aisle => {
             const items = itemsByAisle[aisle.id] || [];
             if (items.length === 0) return null;
 
             return (
-              <div key={aisle.id} className="border border-gray-400 rounded-lg p-3 break-inside-avoid">
-                <div className="font-bold text-sm text-black border-b border-gray-300 pb-1 mb-2 flex items-center gap-1.5">
-                  <span>{aisle.icon}</span>
-                  <span>{aisle.name}</span>
-                  <span className="text-xs text-gray-500 font-normal ml-auto">({items.length})</span>
+              <div key={aisle.id} className="border border-gray-400 rounded-lg p-2.5 break-inside-avoid">
+                <div className="font-bold text-xs text-black border-b border-gray-300 pb-1 mb-1.5 flex items-center justify-between">
+                  <span>{aisle.icon} {aisle.name}</span>
+                  <span className="text-[11px] text-gray-500 font-normal">({items.length})</span>
                 </div>
-                <div className="space-y-1.5">
+                <div className="space-y-1">
                   {items.map((item, idx) => (
-                    <div key={idx} className="flex items-start justify-between">
-                      <div className="flex items-center gap-2">
-                        <span className="inline-block w-3.5 h-3.5 border border-black rounded-xs shrink-0" />
+                    <div key={idx} className="flex items-start justify-between text-[11px]">
+                      <div className="flex items-center gap-1.5">
+                        <span className="inline-block w-3 h-3 border border-black rounded-xs shrink-0" />
                         <span className="font-medium">{item.name}</span>
                       </div>
                       {item.quantity && (
-                        <span className="font-mono text-gray-700 text-[11px] shrink-0 ml-2">
+                        <span className="font-mono text-gray-700 text-[10px] shrink-0 ml-2">
                           {formatQuantity(item.quantity, item.unit)}
                         </span>
                       )}
@@ -208,38 +206,34 @@ export default function ShoppingList() {
             );
           })}
         </div>
-
-        <div className="mt-6 pt-3 border-t border-gray-300 text-center text-[10px] text-gray-500">
-          Meal Prep Codex · Tu semana de comidas resuelta
-        </div>
       </div>
 
       {/* ══════════════════════════════════════════════════════════════
           ON-SCREEN WEB VIEW (HIDDEN ON PRINT)
          ══════════════════════════════════════════════════════════════ */}
-      <div className="print:hidden space-y-6">
+      <div className="print:hidden space-y-4">
         
-        {/* Top Bar */}
-        <div className="bg-[#fffcf6] p-4 sm:p-5 rounded-2xl border border-[#edd3b6] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-4">
+        {/* Compact Header Bar */}
+        <div className="bg-[#fffcf6] px-4 py-3 rounded-2xl border border-[#edd3b6] shadow-xs flex flex-col sm:flex-row sm:items-center justify-between gap-3">
           <div>
-            <div className="flex items-center gap-3">
-              <h2 className="font-display text-2xl text-[#2f1107] m-0">
+            <div className="flex items-center gap-2.5">
+              <h2 className="font-display text-xl text-[#2f1107] m-0">
                 Lista de la compra
               </h2>
-              <span className="text-xs font-bold px-2.5 py-0.5 rounded-full bg-[#fff5e4] text-[#705c53] border border-[#edd3b6]">
-                {boughtCount}/{totalActiveCount} comprados
+              <span className="text-[11px] font-bold px-2 py-0.2 rounded-full bg-[#fff5e4] text-[#705c53] border border-[#edd3b6]">
+                {boughtCount}/{totalActiveCount}
               </span>
             </div>
-            <p className="text-xs text-[#705c53] mt-1 mb-0">
-              {people} {people === 1 ? 'persona' : 'personas'} · semana completa · {totalActiveCount} productos {left.length > 0 && ` · ${left.length} comidas con taper 🥡`}
+            <p className="text-[11px] text-[#705c53] mt-0.5 mb-0">
+              {people} {people === 1 ? 'persona' : 'personas'} · {totalActiveCount} productos {left.length > 0 && ` · ${left.length} tapers 🥡`}
             </p>
           </div>
 
           {/* Action buttons */}
           <div className="flex flex-wrap items-center gap-2">
             {/* Diners selector */}
-            <div className="flex items-center bg-[#fff5e4] border border-[#edd3b6] rounded-full px-3 py-1 gap-2 text-xs">
-              <FontAwesomeIcon icon={faUsers} className="text-[#705c53]" />
+            <div className="flex items-center bg-[#fff5e4] border border-[#edd3b6] rounded-full px-2.5 py-0.5 gap-1.5 text-xs">
+              <FontAwesomeIcon icon={faUsers} className="text-[#705c53] text-[10px]" />
               <button
                 onClick={() => setPeople(Math.max(1, people - 1))}
                 className="text-[#705c53] hover:text-[#2f1107] font-bold px-1 cursor-pointer"
@@ -247,11 +241,11 @@ export default function ShoppingList() {
               >
                 -
               </button>
-              <span className="font-bold text-[#2f1107] min-w-[50px] text-center">
-                {people} {people === 1 ? 'pers.' : 'pers.'}
+              <span className="font-bold text-[#2f1107] min-w-[38px] text-center text-xs select-none">
+                {people} {people === 1 ? 'p.' : 'p.'}
               </span>
               <button
-                onClick={() => setPeople(Math.min(12, people + 1))}
+                onClick={() => setPeople(people + 1)}
                 className="text-[#705c53] hover:text-[#2f1107] font-bold px-1 cursor-pointer"
                 title="Más personas"
               >
@@ -262,59 +256,59 @@ export default function ShoppingList() {
             {/* Supermarket mode */}
             <button
               onClick={() => setIsSupermarketMode(!isSupermarketMode)}
-              className={`px-3.5 py-1.5 rounded-full text-xs font-bold flex items-center gap-1.5 transition-colors cursor-pointer border ${
+              className={`px-3 py-1 rounded-full text-xs font-bold flex items-center gap-1 transition-colors cursor-pointer border ${
                 isSupermarketMode
-                  ? 'bg-[#705c53] text-[#fffcf6] border-[#705c53] shadow-xs'
+                  ? 'bg-[#705c53] text-[#fffcf6] border-[#705c53]'
                   : 'bg-[#fff5e4] text-[#705c53] border-[#edd3b6] hover:bg-[#fae5c0]'
               }`}
               title="Modo táctil para comprar con el móvil"
             >
-              <FontAwesomeIcon icon={faMobileAlt} />
-              <span>Modo súper</span>
+              <FontAwesomeIcon icon={faMobileAlt} className="text-[10px]" />
+              <span>Súper</span>
             </button>
 
             {/* Copy button */}
             <button
               onClick={handleCopyToClipboard}
-              className="px-3.5 py-1.5 bg-[#fff5e4] text-[#705c53] border border-[#edd3b6] rounded-full text-xs font-bold hover:bg-[#fae5c0] transition-colors flex items-center gap-1.5 cursor-pointer"
-              title="Copiar texto para WhatsApp o notas"
+              className="px-3 py-1 bg-[#fff5e4] text-[#705c53] border border-[#edd3b6] rounded-full text-xs font-bold hover:bg-[#fae5c0] transition-colors flex items-center gap-1 cursor-pointer"
+              title="Copiar texto para WhatsApp"
             >
-              <FontAwesomeIcon icon={faCopy} />
-              <span>{copySuccess ? '¡Copiado!' : 'Copiar'}</span>
+              <FontAwesomeIcon icon={faCopy} className="text-[10px]" />
+              <span>{copySuccess ? 'Copiado' : 'Copiar'}</span>
             </button>
 
             {/* Print button */}
             <button
               onClick={handlePrint}
-              className="px-3.5 py-1.5 bg-[#705c53] text-[#fffcf6] border border-[#705c53] rounded-full text-xs font-bold hover:bg-[#2f1107] transition-colors flex items-center gap-1.5 cursor-pointer shadow-xs"
-              title="Imprimir solo la lista con el logo de Meal Prep Codex"
+              className="px-3 py-1 bg-[#705c53] text-[#fffcf6] border border-[#705c53] rounded-full text-xs font-bold hover:bg-[#2f1107] transition-colors flex items-center gap-1 cursor-pointer shadow-xs"
+              title="Imprimir solo la lista con el logo oficial"
             >
-              <FontAwesomeIcon icon={faPrint} />
+              <FontAwesomeIcon icon={faPrint} className="text-[10px]" />
               <span>Imprimir</span>
             </button>
           </div>
         </div>
 
-        {/* Add custom product input */}
+        {/* Add product input */}
         <form onSubmit={handleAddExtra} className="flex gap-2">
           <input
             type="text"
             value={newExtraText}
             onChange={(e) => setNewExtraText(e.target.value)}
-            placeholder="Añadir otro producto a la lista (ej. Café, Aceite de oliva, Servilletas...)"
-            className="flex-1 px-4 py-2.5 bg-[#fffcf6] border border-[#edd3b6] rounded-xl text-xs text-[#2f1107] placeholder-[#705c53]/60 focus:outline-none focus:ring-1 focus:ring-[#705c53]"
+            placeholder="Añadir otro producto (ej. Café, Aceite, Pan...)"
+            className="flex-1 px-3.5 py-2 bg-[#fffcf6] border border-[#edd3b6] rounded-xl text-xs text-[#2f1107] placeholder-[#705c53]/60 focus:outline-none focus:ring-1 focus:ring-[#705c53]"
           />
           <button
             type="submit"
-            className="px-5 py-2.5 bg-[#705c53] text-[#fffcf6] rounded-xl text-xs font-bold hover:bg-[#2f1107] transition-colors flex items-center gap-1.5 cursor-pointer shrink-0 shadow-xs"
+            className="px-4 py-2 bg-[#705c53] text-[#fffcf6] rounded-xl text-xs font-bold hover:bg-[#2f1107] transition-colors flex items-center gap-1 cursor-pointer shrink-0 shadow-xs"
           >
-            <FontAwesomeIcon icon={faPlus} />
+            <FontAwesomeIcon icon={faPlus} className="text-[10px]" />
             Añadir
           </button>
         </form>
 
-        {/* Aisle Grid - 2 columns on desktop for balanced, ergonomic layout */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-start">
+        {/* ─── COMPACT MASONRY / CSS-COLUMNS (ZERO EMPTY VOIDS!) ─── */}
+        <div className="columns-1 md:columns-2 gap-3 space-y-3">
           {AISLES.map(aisle => {
             const items = itemsByAisle[aisle.id] || [];
             if (items.length === 0) return null;
@@ -322,46 +316,46 @@ export default function ShoppingList() {
             return (
               <div
                 key={aisle.id}
-                className="bg-[#fffcf6] rounded-2xl border border-[#edd3b6] shadow-xs overflow-hidden"
+                className="bg-[#fffcf6] rounded-2xl border border-[#edd3b6] shadow-2xs overflow-hidden break-inside-avoid"
               >
-                {/* Aisle Header */}
-                <div className="bg-[#fff5e4] px-4 py-2.5 border-b border-[#edd3b6] flex items-center justify-between">
-                  <div className="flex items-center gap-2">
-                    <span className="text-base">{aisle.icon}</span>
-                    <h3 className="font-display text-sm sm:text-base font-bold text-[#2f1107] m-0">
+                {/* Compact Aisle Header */}
+                <div className="bg-[#fff5e4] px-3 py-1.5 border-b border-[#edd3b6] flex items-center justify-between">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">{aisle.icon}</span>
+                    <h3 className="font-display text-xs sm:text-sm font-bold text-[#2f1107] m-0">
                       {aisle.name}
                     </h3>
                   </div>
-                  <span className="text-[11px] text-[#705c53] font-medium">
-                    {items.length} {items.length === 1 ? 'producto' : 'productos'}
+                  <span className="text-[10px] text-[#705c53] font-mono">
+                    {items.length}
                   </span>
                 </div>
 
-                {/* Items List */}
-                <div className="divide-y divide-[#edd3b6]/50 p-1.5">
+                {/* Items List - Compact py-1 */}
+                <div className="divide-y divide-[#edd3b6]/40 p-1">
                   {items.map((item, idx) => {
                     const isChecked = have.includes(item.name);
                     return (
                       <div
                         key={item.id || `${item.name}-${idx}`}
-                        className={`flex items-center justify-between px-2.5 rounded-xl transition-colors ${
-                          isChecked ? 'bg-[#fff5e4]/50 opacity-60' : 'hover:bg-[#fff5e4]'
-                        } ${isSupermarketMode ? 'py-3' : 'py-2'}`}
+                        className={`flex items-center justify-between px-2 rounded-lg transition-colors ${
+                          isChecked ? 'bg-[#fff5e4]/50 opacity-60' : 'hover:bg-[#fff5e4]/70'
+                        } ${isSupermarketMode ? 'py-2' : 'py-1'}`}
                       >
                         {/* Checkbox & Name */}
-                        <label className="flex items-center gap-2.5 cursor-pointer flex-1 min-w-0 pr-2">
+                        <label className="flex items-center gap-2 cursor-pointer flex-1 min-w-0 pr-1.5">
                           <input
                             type="checkbox"
                             checked={isChecked}
                             onChange={() => toggleHaveItem(item.name)}
                             className={`rounded border-[#705c53] text-[#705c53] focus:ring-0 cursor-pointer ${
-                              isSupermarketMode ? 'w-5 h-5' : 'w-4 h-4'
+                              isSupermarketMode ? 'w-4.5 h-4.5' : 'w-3.5 h-3.5'
                             }`}
                           />
                           <span
-                            className={`font-medium truncate ${
+                            className={`truncate ${
                               isChecked ? 'line-through text-[#705c53]' : 'text-[#2f1107]'
-                            } ${isSupermarketMode ? 'text-sm font-semibold' : 'text-xs'}`}
+                            } ${isSupermarketMode ? 'text-xs font-semibold' : 'text-xs font-medium'}`}
                             title={item.name}
                           >
                             {item.name}
@@ -369,9 +363,9 @@ export default function ShoppingList() {
                         </label>
 
                         {/* Quantity & Actions */}
-                        <div className="flex items-center gap-2 shrink-0">
+                        <div className="flex items-center gap-1.5 shrink-0">
                           {item.quantity && (
-                            <span className="font-mono text-[11px] font-bold text-[#705c53] bg-[#fff5e4] px-2 py-0.5 rounded-md border border-[#edd3b6]/60">
+                            <span className="font-mono text-[10px] font-bold text-[#705c53] bg-[#fff5e4] px-1.5 py-0.2 rounded border border-[#edd3b6]/60">
                               {formatQuantity(item.quantity, item.unit)}
                             </span>
                           )}
@@ -379,15 +373,15 @@ export default function ShoppingList() {
                           {item.isExtra ? (
                             <button
                               onClick={() => removeExtraItem(item.id)}
-                              className="text-[#6d2323] hover:text-red-700 p-1 text-xs cursor-pointer"
-                              title="Eliminar producto"
+                              className="text-[#6d2323] hover:text-red-700 p-0.5 text-xs cursor-pointer"
+                              title="Eliminar"
                             >
-                              <FontAwesomeIcon icon={faTrash} />
+                              <FontAwesomeIcon icon={faTrash} className="text-[10px]" />
                             </button>
                           ) : (
                             <button
                               onClick={() => togglePantryItem(item.name)}
-                              className="text-[10px] text-[#705c53] hover:text-[#2f1107] underline cursor-pointer"
+                              className="text-[9.5px] text-[#705c53] hover:text-[#2f1107] underline cursor-pointer"
                               title="Marcar que ya lo tienes en casa"
                             >
                               Ya lo tengo
@@ -405,31 +399,31 @@ export default function ShoppingList() {
 
         {/* Pantry Section ("En tu despensa") */}
         {pantryItems.length > 0 && (
-          <div className="bg-[#fffcf6] rounded-2xl border border-[#edd3b6] shadow-xs overflow-hidden">
+          <div className="bg-[#fffcf6] rounded-2xl border border-[#edd3b6] shadow-2xs overflow-hidden">
             <button
               type="button"
               onClick={() => setShowPantrySection(!showPantrySection)}
-              className="w-full bg-[#fff5e4] px-4 py-3 flex items-center justify-between cursor-pointer hover:bg-[#fae5c0]/50 transition-colors"
+              className="w-full bg-[#fff5e4] px-3.5 py-2 flex items-center justify-between cursor-pointer hover:bg-[#fae5c0]/50 transition-colors"
             >
-              <div className="flex items-center gap-2">
-                <span>🏠</span>
-                <span className="font-display text-sm font-bold text-[#2f1107]">
-                  En tu despensa ({pantryItems.length} {pantryItems.length === 1 ? 'producto' : 'productos'} ya disponibles)
+              <div className="flex items-center gap-1.5">
+                <span className="text-xs">🏠</span>
+                <span className="font-display text-xs font-bold text-[#2f1107]">
+                  En tu despensa ({pantryItems.length} productos disponibles)
                 </span>
               </div>
-              <FontAwesomeIcon icon={showPantrySection ? faChevronUp : faChevronDown} className="text-xs text-[#705c53]" />
+              <FontAwesomeIcon icon={showPantrySection ? faChevronUp : faChevronDown} className="text-[10px] text-[#705c53]" />
             </button>
 
             {showPantrySection && (
-              <div className="p-3 divide-y divide-[#edd3b6]/40 text-xs">
+              <div className="p-2.5 divide-y divide-[#edd3b6]/40 text-xs">
                 {pantryItems.map((item, idx) => (
-                  <div key={idx} className="flex items-center justify-between py-2 text-[#705c53]">
-                    <span>{item.name}</span>
+                  <div key={idx} className="flex items-center justify-between py-1 text-[#705c53]">
+                    <span className="text-xs">{item.name}</span>
                     <button
                       onClick={() => togglePantryItem(item.name)}
                       className="text-[10px] text-[#705c53] hover:text-[#2f1107] underline cursor-pointer"
                     >
-                      Mover a la lista de compra
+                      Mover a la lista
                     </button>
                   </div>
                 ))}
