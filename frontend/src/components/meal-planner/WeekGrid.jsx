@@ -1,22 +1,39 @@
-import React from 'react';
-import { DAYS } from '../../utils/autoGenerate';
+import React, { useState } from 'react';
+import { DAYS, SHORT_DAY_NAMES_ES } from '../../utils/autoGenerate';
 import DayColumn from './DayColumn';
-import DayRow from './DayRow';
 
-export default function WeekGrid({ viewMode = 'columns' }) {
-  if (viewMode === 'rows') {
-    return (
-      <div className="w-full flex flex-col gap-2 pb-6">
-        {DAYS.map(day => (
-          <DayRow key={day} day={day} />
-        ))}
-      </div>
-    );
-  }
+export default function WeekGrid() {
+  const [selectedMobileDay, setSelectedMobileDay] = useState('monday');
 
   return (
-    <div className="w-full overflow-x-auto pb-6 -mx-4 px-4 sm:mx-0 sm:px-0">
-      <div className="flex gap-4 min-w-max">
+    <div className="w-full">
+      {/* Mobile Day Tabs Selector (visible on small screens) */}
+      <div className="md:hidden mb-4">
+        <div className="flex bg-[#fff5e4] p-1 rounded-2xl border border-[#edd3b6] gap-1 overflow-x-auto no-scrollbar">
+          {DAYS.map(day => (
+            <button
+              key={day}
+              type="button"
+              onClick={() => setSelectedMobileDay(day)}
+              className={`flex-1 min-w-[42px] py-2 rounded-xl text-xs font-bold transition-all cursor-pointer text-center ${
+                selectedMobileDay === day
+                  ? 'bg-[#705c53] text-[#fffcf6] shadow-xs'
+                  : 'text-[#705c53] hover:text-[#2f1107]'
+              }`}
+            >
+              {SHORT_DAY_NAMES_ES[day]}
+            </button>
+          ))}
+        </div>
+
+        {/* Mobile Single Day View */}
+        <div className="mt-3 max-w-sm mx-auto">
+          <DayColumn day={selectedMobileDay} />
+        </div>
+      </div>
+
+      {/* Desktop 7-Column Grid (hidden on mobile, visible md and above) */}
+      <div className="hidden md:flex gap-3 overflow-x-auto pb-4 items-start">
         {DAYS.map(day => (
           <DayColumn key={day} day={day} />
         ))}
@@ -24,4 +41,3 @@ export default function WeekGrid({ viewMode = 'columns' }) {
     </div>
   );
 }
-

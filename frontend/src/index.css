@@ -71,3 +71,45 @@ h1 {
   font-family: 'Ruslan Display', cursive;
   font-weight: 400; /* Default weight for Ruslan Display */
 }
+
+
+/* ─── PRINT STYLES (Meal Prep Codex - Lista de la Compra) ─── */
+@media print {
+  /* Hide header, navigation, footer, search, floating toast, and all non-print UI */
+  header,
+  footer,
+  nav,
+  form,
+  button,
+  .noprint,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  /* Reset document for clean paper printing */
+  html, body {
+    background: #ffffff !important;
+    color: #000000 !important;
+    font-size: 11pt !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  /* Remove max-width and shadows */
+  main, .max-w-7xl, .max-w-5xl, .max-w-\[1400px\] {
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  /* Reveal print-only elements */
+  .print\:block {
+    display: block !important;
+  }
+
+  .print\:flex {
+    display: flex !important;
+  }
+}

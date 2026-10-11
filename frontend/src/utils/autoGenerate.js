@@ -1,153 +1,301 @@
 /**
- * autoGenerate.js
+ * src/utils/autoGenerate.js
  *
- * Generates a 7-day meal plan from a recipe pool, applying:
- * - Category filtering (breakfast / main / snack)
- * - Dietary preference filtering
- * - Repeat-avoidance (max 2× per week, never on consecutive days)
- * - Graceful fallback if the pool is too small
+ * Intelligent meal plan generator supporting:
+ * - 1-click generation without mandatory profile
+ * - Cook modes: 'daily', 'batch2', 'min'
+ * - Dietary & style filters (vegetarian, quick, budget)
+ * - Pinned meal retention
+ * - Leftover / Taper batch linking
  */
 
-const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+import { isQuickRecipe, isBudgetRecipe, isVegetarianRecipe } from './ingredientCategories';
 
-function filterRecipes(recipes, category, dietary) {
+export const DAYS = ['monday', 'tuesday', 'wednesday', 'thursday', 'friday', 'saturday', 'sunday'];
+
+export const DAY_NAMES_ES = {
+  monday: 'Lunes',
+  tuesday: 'Martes',
+  wednesday: 'Miércoles',
+  thursday: 'Jueves',
+  friday: 'Viernes',
+  saturday: 'Sábado',
+  sunday: 'Domingo',
+};
+
+export const SHORT_DAY_NAMES_ES = {
+  monday: 'Lun',
+  tuesday: 'Mar',
+  wednesday: 'Mié',
+  thursday: 'Jue',
+  friday: 'Vie',
+  saturday: 'Sáb',
+  sunday: 'Dom',
+};
+
+export function filterRecipes(recipes, category, options = {}) {
+  const { dietary = 'none', style = 'all' } = options;
+
   return recipes.filter(r => {
     if (r.category !== category) return false;
-    if (!dietary || dietary === 'none') return true;
-    if (dietary === 'vegan')       return r.dietary?.includes('vegan');
-    if (dietary === 'vegetarian')  return r.dietary?.includes('vegetarian') || r.dietary?.includes('vegan');
+    
+    // Dietary
+    if (dietary === 'vegan') {
+      if (!r.dietary?.includes('vegan')) return false;
+    } else if (dietary === 'vegetarian') {
+      if (!isVegetarianRecipe(r)) return false;
+    }
+
+    // Style
+    if (style === 'quick' && !isQuickRecipe(r)) return false;
+    if (style === 'budget' && !isBudgetRecipe(r)) return false;
+
     return true;
   });
 }
 
-/**
- * Pick a recipe from the pool following repeat-avoidance rules.
- * usageMap: { recipeId -> count this week }
- * lastUsedDay: { recipeId -> last day index it was used }
- * currentDayIdx: current day index (0=monday)
- * maxRepeatsPerWeek: how many times a recipe can repeat (starts at 2)
- */
-function pickRecipe(pool, usageMap, lastUsedDay, currentDayIdx, maxRepeatsPerWeek) {
-  // Shuffle pool for randomness
+function pickRandom(pool, usageMap, lastUsedDay, currentDayIdx, maxRepeats = 2) {
+  if (!pool || pool.length === 0) return null;
   const shuffled = [...pool].sort(() => Math.random() - 0.5);
 
-  // Try to find a recipe under the repeat cap and not used yesterday
+  // 1. Not used yesterday and under repeat cap
   for (const recipe of shuffled) {
     const count = usageMap[recipe.id] ?? 0;
     const lastDay = lastUsedDay[recipe.id] ?? -99;
-    if (count < maxRepeatsPerWeek && lastDay !== currentDayIdx - 1) {
+    if (count < maxRepeats && lastDay !== currentDayIdx - 1) {
       return recipe;
     }
   }
 
-  // Relax: allow consecutive days but still under cap
+  // 2. Under repeat cap
   for (const recipe of shuffled) {
     const count = usageMap[recipe.id] ?? 0;
-    if (count < maxRepeatsPerWeek) {
-      return recipe;
-    }
+    if (count < maxRepeats) return recipe;
   }
 
-  // Last resort: pick the least-used
+  // 3. Fallback: least used
   return shuffled.sort((a, b) => (usageMap[a.id] ?? 0) - (usageMap[b.id] ?? 0))[0];
 }
 
 /**
- * Generate a full week plan.
- *
- * @param {Array} recipes - all recipes
- * @param {Object} profile - user profile with { dietaryPreference, defaultMealsPerDay }
- * @returns {{ monday: { slots: [] }, tuesday: ..., ... }}
+ * Generate full week plan
  */
-export function generateWeek(recipes, profile) {
-  const dietary = profile?.dietaryPreference ?? 'none';
-  const mealsPerDay = profile?.defaultMealsPerDay ?? 3;
-  const snackCount = Math.max(0, Math.min(2, mealsPerDay - 3));
+export function generateWeek(recipes, options = {}) {
+  const {
+    dietary = 'none',
+    style = 'all',
+    cookMode = 'daily', // 'daily', 'batch2', 'min'
+    includeSnacks = false,
+    existingPlan = null,
+    pins = [], // array of pinned slot IDs (e.g. 'monday-lunch')
+    recentRecipeIds = [], // recipes from previous week to avoid if possible
+  } = options;
 
-  const breakfastPool = filterRecipes(recipes, 'breakfast', dietary);
-  const mainPool      = filterRecipes(recipes, 'main',      dietary);
-  const snackPool     = filterRecipes(recipes, 'snack',     dietary);
+  let breakfastPool = filterRecipes(recipes, 'breakfast', { dietary, style });
+  let mainPool = filterRecipes(recipes, 'main', { dietary, style });
+  let snackPool = filterRecipes(recipes, 'snack', { dietary, style });
 
-  // Repeat-avoidance tracking per category
+  // Fallback to broader pools if too strict
+  if (breakfastPool.length < 3) breakfastPool = filterRecipes(recipes, 'breakfast', { dietary });
+  if (mainPool.length < 5) mainPool = filterRecipes(recipes, 'main', { dietary });
+  if (snackPool.length < 2) snackPool = filterRecipes(recipes, 'snack', { dietary });
+
   const usageB = {}, lastB = {};
   const usageM = {}, lastM = {};
   const usageS = {}, lastS = {};
 
+  // Penalize recipes from recent week
+  recentRecipeIds.forEach(id => {
+    usageB[id] = (usageB[id] || 0) + 1;
+    usageM[id] = (usageM[id] || 0) + 1;
+  });
+
   const week = {};
+  const cook = {};
+  const left = [];
 
-  DAYS.forEach((day, dayIdx) => {
-    const slots = [];
-
-    // Breakfast
-    const bf = pickRecipe(breakfastPool, usageB, lastB, dayIdx, 2);
-    if (bf) {
-      usageB[bf.id] = (usageB[bf.id] ?? 0) + 1;
-      lastB[bf.id] = dayIdx;
-      slots.push({ id: `${day}-breakfast`, type: 'breakfast', recipeId: bf.id, adjustments: null });
+  // Initialize empty days
+  DAYS.forEach(day => {
+    const prevSlots = existingPlan?.[day]?.slots || [];
+    const hasExistingSnack = prevSlots.some(s => s.type === 'snack');
+    const slots = [
+      { id: `${day}-breakfast`, type: 'breakfast', recipeId: null, adjustments: null },
+      { id: `${day}-lunch`, type: 'lunch', recipeId: null, adjustments: null },
+      { id: `${day}-dinner`, type: 'dinner', recipeId: null, adjustments: null },
+    ];
+    if (includeSnacks || hasExistingSnack) {
+      slots.push({ id: `${day}-snack`, type: 'snack', recipeId: null, adjustments: null });
     }
-
-    // Lunch (from main pool)
-    const lu = pickRecipe(mainPool, usageM, lastM, dayIdx, 2);
-    if (lu) {
-      usageM[lu.id] = (usageM[lu.id] ?? 0) + 1;
-      lastM[lu.id] = dayIdx;
-      slots.push({ id: `${day}-lunch`, type: 'lunch', recipeId: lu.id, adjustments: null });
-    }
-
-    // Dinner (from main pool, different from lunch)
-    const usageMForDinner = { ...usageM };
-    // Temporarily mark lunch recipe as used-this-day so dinner avoids it
-    if (lu) usageMForDinner[lu.id] = (usageMForDinner[lu.id] ?? 0) + 99;
-    const di = pickRecipe(mainPool, usageMForDinner, lastM, dayIdx, 2);
-    if (di) {
-      usageM[di.id] = (usageM[di.id] ?? 0) + 1;
-      lastM[di.id] = dayIdx;
-      slots.push({ id: `${day}-dinner`, type: 'dinner', recipeId: di.id, adjustments: null });
-    }
-
-    // Snacks
-    for (let s = 0; s < snackCount; s++) {
-      const usageSForSlot = { ...usageS };
-      // Avoid same snack twice in one day
-      const prevSnacks = slots.filter(sl => sl.type === 'snack').map(sl => sl.recipeId);
-      prevSnacks.forEach(id => { usageSForSlot[id] = (usageSForSlot[id] ?? 0) + 99; });
-
-      const sn = pickRecipe(snackPool, usageSForSlot, lastS, dayIdx, 2);
-      if (sn) {
-        usageS[sn.id] = (usageS[sn.id] ?? 0) + 1;
-        lastS[sn.id] = dayIdx;
-        slots.push({ id: `${day}-snack${s + 1}`, type: 'snack', recipeId: sn.id, adjustments: null });
-      }
-    }
-
     week[day] = { slots };
   });
 
-  // Check if pool was too small and add a warning flag
-  week._warnings = [];
-  if (breakfastPool.length < 7) week._warnings.push('breakfast');
-  if (mainPool.length < 14) week._warnings.push('main');
-  if (snackCount > 0 && snackPool.length < 7) week._warnings.push('snack');
+  // Preserve pinned slots first
+  pins.forEach(pinId => {
+    const [pinDay, pinType] = pinId.split('-');
+    const existingSlot = existingPlan?.[pinDay]?.slots?.find(s => s.id === pinId);
+    if (existingSlot && existingSlot.recipeId) {
+      const targetSlot = week[pinDay]?.slots?.find(s => s.id === pinId);
+      if (targetSlot) {
+        targetSlot.recipeId = existingSlot.recipeId;
+        targetSlot.adjustments = existingSlot.adjustments;
+        const dIdx = DAYS.indexOf(pinDay);
+        if (pinType === 'breakfast') {
+          usageB[existingSlot.recipeId] = (usageB[existingSlot.recipeId] || 0) + 1;
+          lastB[existingSlot.recipeId] = dIdx;
+        } else if (pinType === 'snack') {
+          usageS[existingSlot.recipeId] = (usageS[existingSlot.recipeId] || 0) + 1;
+          lastS[existingSlot.recipeId] = dIdx;
+        } else {
+          usageM[existingSlot.recipeId] = (usageM[existingSlot.recipeId] || 0) + 1;
+          lastM[existingSlot.recipeId] = dIdx;
+        }
+      }
+    }
+  });
 
-  return week;
+  // Generate Breakfasts (always daily)
+  DAYS.forEach((day, dIdx) => {
+    const slot = week[day].slots.find(s => s.type === 'breakfast');
+    if (!slot.recipeId) {
+      const r = pickRandom(breakfastPool, usageB, lastB, dIdx, 2);
+      if (r) {
+        slot.recipeId = r.id;
+        usageB[r.id] = (usageB[r.id] || 0) + 1;
+        lastB[r.id] = dIdx;
+      }
+    }
+  });
+
+  // Generate Mains according to cookMode
+  if (cookMode === 'batch2') {
+    // Cook on Mon (eat Mon+Tue), Wed (eat Wed+Thu), Fri (eat Fri+Sat), Sun (Sun)
+    const cookDays = [0, 2, 4, 6];
+    ['lunch', 'dinner'].forEach(mealType => {
+      cookDays.forEach(dIdx => {
+        const cookDayName = DAYS[dIdx];
+        const nextDayName = dIdx + 1 < DAYS.length ? DAYS[dIdx + 1] : null;
+        const cookSlot = week[cookDayName].slots.find(s => s.type === mealType);
+
+        if (!cookSlot.recipeId) {
+          const r = pickRandom(mainPool, usageM, lastM, dIdx, 2);
+          if (r) {
+            cookSlot.recipeId = r.id;
+            usageM[r.id] = (usageM[r.id] || 0) + 1;
+            lastM[r.id] = dIdx;
+          }
+        }
+
+        // Taper for next day if not Sunday and not pinned
+        if (nextDayName && cookSlot.recipeId) {
+          const nextSlot = week[nextDayName].slots.find(s => s.type === mealType);
+          const nextSlotId = `${nextDayName}-${mealType}`;
+          if (!pins.includes(nextSlotId)) {
+            nextSlot.recipeId = cookSlot.recipeId;
+            left.push(nextSlotId);
+            cook[`${cookDayName}-${mealType}`] = 2;
+          }
+        }
+      });
+    });
+  } else if (cookMode === 'min') {
+    // Cook Mon for Mon+Tue+Wed (3x). Cook Thu for Thu+Fri+Sat (3x). Sun is fresh.
+    ['lunch', 'dinner'].forEach(mealType => {
+      // Mon block
+      const monSlot = week['monday'].slots.find(s => s.type === mealType);
+      if (!monSlot.recipeId) {
+        const r = pickRandom(mainPool, usageM, lastM, 0, 2);
+        if (r) {
+          monSlot.recipeId = r.id;
+          usageM[r.id] = (usageM[r.id] || 0) + 1;
+          lastM[r.id] = 0;
+        }
+      }
+      if (monSlot.recipeId) {
+        cook[`monday-${mealType}`] = 3;
+        ['tuesday', 'wednesday'].forEach(day => {
+          const sId = `${day}-${mealType}`;
+          if (!pins.includes(sId)) {
+            week[day].slots.find(s => s.type === mealType).recipeId = monSlot.recipeId;
+            left.push(sId);
+          }
+        });
+      }
+
+      // Thu block
+      const thuSlot = week['thursday'].slots.find(s => s.type === mealType);
+      if (!thuSlot.recipeId) {
+        const r = pickRandom(mainPool, usageM, lastM, 3, 2);
+        if (r) {
+          thuSlot.recipeId = r.id;
+          usageM[r.id] = (usageM[r.id] || 0) + 1;
+          lastM[r.id] = 3;
+        }
+      }
+      if (thuSlot.recipeId) {
+        cook[`thursday-${mealType}`] = 3;
+        ['friday', 'saturday'].forEach(day => {
+          const sId = `${day}-${mealType}`;
+          if (!pins.includes(sId)) {
+            week[day].slots.find(s => s.type === mealType).recipeId = thuSlot.recipeId;
+            left.push(sId);
+          }
+        });
+      }
+
+      // Sun
+      const sunSlot = week['sunday'].slots.find(s => s.type === mealType);
+      if (!sunSlot.recipeId) {
+        const r = pickRandom(mainPool, usageM, lastM, 6, 2);
+        if (r) sunSlot.recipeId = r.id;
+      }
+    });
+  } else {
+    // Daily mode
+    DAYS.forEach((day, dIdx) => {
+      ['lunch', 'dinner'].forEach(mealType => {
+        const slot = week[day].slots.find(s => s.type === mealType);
+        if (!slot.recipeId) {
+          // Avoid lunch same as dinner on same day
+          const otherMealType = mealType === 'lunch' ? 'dinner' : 'lunch';
+          const otherRecipeId = week[day].slots.find(s => s.type === otherMealType)?.recipeId;
+          const usageTemp = { ...usageM };
+          if (otherRecipeId) usageTemp[otherRecipeId] = (usageTemp[otherRecipeId] || 0) + 99;
+
+          const r = pickRandom(mainPool, usageTemp, lastM, dIdx, 2);
+          if (r) {
+            slot.recipeId = r.id;
+            usageM[r.id] = (usageM[r.id] || 0) + 1;
+            lastM[r.id] = dIdx;
+          }
+        }
+      });
+    });
+  }
+
+  // Generate Snacks if requested
+  if (includeSnacks) {
+    DAYS.forEach((day, dIdx) => {
+      const snackSlot = week[day].slots.find(s => s.type === 'snack');
+      if (snackSlot && !snackSlot.recipeId) {
+        const r = pickRandom(snackPool, usageS, lastS, dIdx, 2);
+        if (r) {
+          snackSlot.recipeId = r.id;
+          usageS[r.id] = (usageS[r.id] || 0) + 1;
+          lastS[r.id] = dIdx;
+        }
+      }
+    });
+  }
+
+  return { plan: week, cook, left };
 }
 
 /**
- * Generate a single new recipe for a slot (avoids existing plan's recipe if possible).
+ * Single slot regeneration with alternative suggestions
  */
-export function regenerateSlot(recipes, profile, slotType, currentRecipeId) {
-  const dietary  = profile?.dietaryPreference ?? 'none';
-  const category = slotType === 'breakfast' ? 'breakfast'
-                 : slotType === 'snack'     ? 'snack'
-                 : 'main';
-
-  const pool = filterRecipes(recipes, category, dietary);
-  if (pool.length === 0) return null;
-
-  const alternatives = pool.filter(r => r.id !== currentRecipeId);
-  if (alternatives.length === 0) return pool[Math.floor(Math.random() * pool.length)];
-
-  return alternatives[Math.floor(Math.random() * alternatives.length)];
+export function getSlotAlternatives(recipes, currentRecipeId, slotType, options = {}) {
+  const { dietary = 'none', style = 'all' } = options;
+  const category = slotType === 'breakfast' ? 'breakfast' : slotType === 'snack' ? 'snack' : 'main';
+  const pool = filterRecipes(recipes, category, { dietary, style });
+  return pool.filter(r => r.id !== currentRecipeId);
 }
-
-export { DAYS };
